@@ -20,7 +20,8 @@ As an additional hint it was disclosed, that files dropped to /app/lib/public/in
 <li>algorithm: hash algorithm, SHA256 is used</li>
 </ul>
 <h2 id="hash-length-extension-attack">Hash Length Extension Attack</h2>
-<p><strong>blablabla???</strong></p>
+<p><strong>blablabla???</strong><br>
+<a href="https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks">Explanation of the Hash Length Extension Attack</a></p>
 <h2 id="build-new-firmware-package">Build new firmware package</h2>
 <p>It is now possible to choose between two different payloads (<a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/payload-copy">copy file to incoming folder</a>, <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/payload-reverse-shell">reverse shell</a>) and then to create a ZIP file containing the payload with filename “firmware.bin”.<br>
 Next the hash_extender tool is used to append the new ZIP file to the old one whilst creating a new valid signature.<br>
