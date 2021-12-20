@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HHC2021</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-</head>
-
-<body class="stackedit">
-  <div class="stackedit__html"><h1 id="sans-holiday-hack-challenge-2021">SANS Holiday Hack Challenge 2021</h1>
+<h1 id="sans-holiday-hack-challenge-2021">SANS Holiday Hack Challenge 2021</h1>
 <p><strong>Write-up submitted by Joerg Schwarzwaelder</strong></p>
 <p><strong>In-game character: joergen</strong></p>
 <p><strong>Disclaimer:</strong> All information and code in this repository is provided as-is, probably not without errors and not ready for production use.</p>
 <p><img src="https://github.com/joergschwarzwaelder/hhc2021/blob/master/hhc2021-logo.jpg" alt="HHC2021 Logo"></p>
-<p><strong>’KringleCon 4: Calling Birds!</strong></p>
+<p><strong>KringleCon 4: Calling Birds!</strong></p>
 <p><strong>Background information:</strong></p>
 <p><a href="https://2021.kringlecon.com/">Online Game</a></p>
 <p><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Map.md">Map of the Game</a></p>
@@ -73,7 +62,4 @@ Challenge</a></li>
 <p>Three <a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Holiday%20Eggs.md">Holiday Eggs</a> were discovered.</p>
 <h2 id="group-picture">Group Picture</h2>
 <p><img src="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Group%20Picture.png-----" alt="-----Team's Group Picture"></p>
-</div>
-</body>
 
-</html>
