@@ -46,5 +46,5 @@ Q4 Game Floor Earnings.xlsx
 Fwd: Fwd: [EXTERNAL] Re: Fwd: [EXTERNAL] LOLLLL!!!.eml
 Troll_Pay_Chart.xlsx
 </code></pre>
-<p>So the solution is <strong>Troll_Pay_Chart.xlsx</strong>.</p>
+<p>So the solution is <strong>Troll_Pay_Chart.xlsx</strong></p>
 
