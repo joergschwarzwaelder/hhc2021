@@ -15,12 +15,12 @@ As an additional hint it was disclosed, that files dropped to /app/lib/public/in
 <p>The firmware package is a JSON file consisting out of these data fields:</p>
 <ul>
 <li>firmware: Base64 encoded ZIP file (containing the ELF binary “firmware.bin”)</li>
-<li>signature: hash of “secret||ZIP file”</li>
+<li>signature: hash of {secret||ZIP file}</li>
 <li>secret_length: length of the secret prefixed to the ZIP file to create the hash</li>
 <li>algorithm: hash algorithm, SHA256 is used</li>
 </ul>
 <h2 id="hash-length-extension-attack">Hash Length Extension Attack</h2>
-<p>The <a href="https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks">Hash Length Extension Attack</a> is based on the fact, that if you have “data” and the hash of “secret||data”, you are able to create a new valid hash for “secret||data||payload”, even without knowing the secret.<br>
+<p>The <a href="https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks">Hash Length Extension Attack</a> is based on the fact, that if you have “data” and the hash of {secret||data}, you are able to create a new valid hash for {secret||data||payload}, even without knowing the secret.<br>
 This is possible by replicating the state of the hashing algorithm, which is buried in the hash value.<br>
 If the state of the hash algorithm is recovered, it can be used to continue it’s calculation over the pay load data.<br>
 This leads to a new hash, but this is still valid.</p>
