@@ -13,32 +13,19 @@
 <p>When navigating as Santa through the Santa image in the Entry hall the character is transformed back to original.</p>
 <h2 id="main-objectives">Main Objectives</h2>
 <ul>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-1">Objective<br>
-1: KringleCon Orientation</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-2">Objective<br>
-2: Where in the World is Caramel Santaigo</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-3">Objective<br>
-3: Thaw Frost Tower’s Entrance</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-4">Objective<br>
-4: Slot Machine Investigation</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-5">Objective<br>
-5: Strange USB Device</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-6">Objective<br>
-6: Shellcode Primer</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-7">Objective<br>
-7: Printer Exploitation</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-8">Objective<br>
-8: Kerberoasting on an Open Fire</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-9">Objective<br>
-9: Splunk!</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-10">Objective<br>
-10: Now Hiring!</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-11">Objective<br>
-11: Customer Complaint Analysis</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-12">Objective<br>
-12: Frost Tower Website Checkup</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-13">Objective<br>
-13: FPGA Programming</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-1">Objective 1: KringleCon Orientation</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-2">Objective 2: Where in the World is Caramel Santaigo</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-3">Objective 3: Thaw Frost Tower’s Entrance</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-4">Objective 4: Slot Machine Investigation</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-5">Objective 5: Strange USB Device</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-6">Objective 6: Shellcode Primer</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-7">Objective 7: Printer Exploitation</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/objective-8">Objective 8: Kerberoasting on an Open Fire</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-9">Objective 9: Splunk!</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-10">Objective 10: Now Hiring!</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-11">Objective 11: Customer Complaint Analysis</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-12">Objective 12: Frost Tower Website Checkup</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-13">Objective 13: FPGA Programming</a></li>
 </ul>
 <h2 id="additional-tasks">Additional Tasks</h2>
 <ul>
