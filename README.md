@@ -46,7 +46,7 @@ Challenge</a></li>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Unescape%20Tmux.md">IMDS Exploration</a></li>
 </ul>
 <h2 id="holiday-eggs">Holiday Eggs</h2>
-<p>Three <a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Holiday%20Eggs.md">Holiday Eggs</a> were discovered.</p>
+<p>Three <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md">Holiday Eggs</a> were discovered.</p>
 <h2 id="group-picture">Group Picture</h2>
 <p><img src="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Group%20Picture.png-----" alt="-----Team's Group Picture"></p>
 
