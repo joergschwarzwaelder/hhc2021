@@ -15,7 +15,7 @@ As an additional hint it was disclosed, that files dropped to /app/lib/public/in
 <p>The firmware package is a JSON file consisting out of these data fields:</p>
 <ul>
 <li>firmware: Base64 encoded ZIP file (containing the ELF binary “firmware.bin”)</li>
-<li>signature: hash of secret||ZIP file</li>
+<li>signature: hash of “secret||ZIP file”</li>
 <li>secret_length: length of the secret prefixed to the ZIP file to create the hash</li>
 <li>algorithm: hash algorithm, SHA256 is used</li>
 </ul>
