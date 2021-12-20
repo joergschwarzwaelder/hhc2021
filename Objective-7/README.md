@@ -28,9 +28,9 @@ Next the hash_extender tool is used to append the new ZIP file to the old one wh
 Upon extraction the first, original, ZIP file is ignored and only the ZIP containing out custom payload will be extracted and executed.<br>
 All of this is then packed into a JSON file, which has the correct signature and will be accepted by the firmware update process.</p>
 <h2 id="upload-firmware-package">Upload firmware package</h2>
-<p>Next the new firmware JSON file is uploaded to the printer.</p>
+<p>Next the new firmware JSON file is uploaded to the printer using the web interface.</p>
 <h2 id="retrieve-data">Retrieve data</h2>
-<p>Finally the file /var/spool/printer.log can be retrieved.</p>
+<p>Finally the file /var/spool/printer.log can be retrieved using the method predetermined by the payload.</p>
 <h2 id="automation">Automation</h2>
 <p>The full process was automated in the <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/exploit-bot.pl">exploit-bot.pl</a>.<br>
 It expects hash_extender to be available in the current directory and just consumes an option “-p” to specify the payload file.</p>
