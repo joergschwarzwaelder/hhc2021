@@ -26,11 +26,11 @@ If the state of the hash algorithm is recovered, it can be used to continue it�
 This leads to a new hash, but this is still valid.</p>
 <h2 id="build-new-firmware-package">Build new firmware package</h2>
 <p>It is now possible to choose between two different payloads (<a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/payload-copy">copy file to incoming folder</a>, <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/payload-reverse-shell">reverse shell</a>) and then to create a ZIP file containing the payload with filename “firmware.bin”.<br>
-Next the hash_extender tool is used to append the new ZIP file to the old one whilst creating a new valid hash.<br>
+Next the hash_extender tool is used to append the new ZIP file to the old one whilst creating a new valid hash (hash_extender -d {firmware in as hex string} --data-format=hex -s {signature as hex string} -l {secret length, here: 16} -a {payload as hex string} --append-format=hex).<br>
 Upon extraction, the first, original, ZIP file is ignored and only the appended ZIP containing the custom payload will be extracted and executed.<br>
-All of this is then packed into a JSON file, which has the correct hash and will be accepted by the firmware update process.</p>
+All of this is then packed into a JSON file (the new firmware data is provided by the tool as a hex string, it has to be converted into a base64 encoded binary), which will be accepted by the firmware update process.</p>
 <h2 id="upload-firmware-package">Upload firmware package</h2>
-<p>Next the new firmware JSON file is uploaded to the printer using the web interface.</p>
+<p>Next the new firmware JSON file is uploaded to the printer using the web interface and as part of this process the payload is executed.</p>
 <h2 id="retrieve-data">Retrieve data</h2>
 <p>Finally the file /var/spool/printer.log can be retrieved using the method predetermined by the payload.</p>
 <h2 id="automation">Automation</h2>
