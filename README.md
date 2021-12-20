@@ -29,24 +29,22 @@
 </ul>
 <h2 id="additional-tasks">Additional Tasks</h2>
 <ul>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/33.6%20kbps%20challenge.md">Open the Gate<br>
-Challenge</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/CAN%20Bus%20Investigation.md">Grepping for Gold</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Elf%20C0de.md">Logic Munchers</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Kringle%20Kiosk.md">Yara Analysis</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Linux%20Primer.md">Strace, Ltrace, Retrace</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Redis%20Bug%20Hunt.md">Elf Code Python</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Scapy%20Prepper.md">Exif Metadata</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Snowball%20Game.md">HoHo … No</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Sort-o-matic.md">Sort-o-matic</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Speaker%20UNPrep.md">Holiday Hero</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Unescape%20Tmux.md">IPv6 Sandbox</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Unescape%20Tmux.md">Strange USB Device</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Unescape%20Tmux.md">Frostavator</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Additional/Unescape%20Tmux.md">IMDS Exploration</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Open%20the%20Gate%20Challenge.md">Open the Gate Challenge</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Greppinf%20for%20Gold.md">Grepping for Gold</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Login%20Munchers.md">Logic Munchers</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Yara%20Analysis.md">Yara Analysis</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Strace,%20Ltrace,%20Retrace.md">Strace, Ltrace, Retrace</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Elf%20Code%20Python.md">Elf Code Python</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Exif%20Metadata.md">Exif Metadata</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/HoHo...No.md">HoHo … No</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Holiday%25Hero.md">Holiday Hero</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IPv6%20Sandbox.md">IPv6 Sandbox</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Strange%20USB%20Device.md">Strange USB Device</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Frostavator.md">Frostavator</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md">IMDS Exploration</a></li>
 </ul>
 <h2 id="holiday-eggs">Holiday Eggs</h2>
-<p>Three <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md">Holiday Eggs</a> were discovered.</p>
+<p>One <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md">Holiday Eggs</a> was discovered.</p>
 <h2 id="group-picture">Group Picture</h2>
 <p><img src="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Group%20Picture.png-----" alt="-----Team's Group Picture"></p>
 
