@@ -33,7 +33,8 @@ All of this is then packed into a JSON file, which has the correct signature and
 <p>Finally the file /var/spool/printer.log can be retrieved using the method predetermined by the payload.</p>
 <h2 id="automation">Automation</h2>
 <p>The full process was automated in the <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/exploit-bot.pl">exploit-bot.pl</a>.<br>
-It expects hash_extender to be available in the current directory and just consumes an option “-p” to specify the payload file.</p>
+It expects hash_extender to be available in the current directory and just consumes an option “-p” to specify the payload file.<br>
+The script downloads the current firmware package, adds the payload, creates the new signature and upload the new firmware package to the printer.</p>
 <h3 id="content-of-printer.log">Content of printer.log</h3>
 <pre><code>Documents queued for printing
 =============================
