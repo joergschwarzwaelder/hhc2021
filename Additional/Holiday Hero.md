@@ -8,7 +8,7 @@
 <p>In the single player mode the other player is the computer.<br>
 In order to activate the single player mode, the following has to be done:</p>
 <ul>
-<li>Activate the single player mode in the cookie: If not done yet, set the single mode variable in the game cookie to true and restart the game. By sending this value to the server upon game start, the server knows that it is expected to act as one player.<br>
+<li>Activate the single player mode in the cookie: If not done yet, set the single player mode variable in the game cookie to true (there should be a browser extensions available for the browser used) and restart the game. By sending this value to the server upon game start, the server knows that it is expected to act as one of the two players.<br>
 <img src="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/holiday-hero-cookie.png" alt="setting the game cookie for single player mode"></li>
 <li>Activate the single player mode in the browser. To perform this, take these steps:
 <ul>
