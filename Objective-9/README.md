@@ -49,4 +49,6 @@ index=main sourcetype=github_json
 <pre><code>index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational EventCode=1  ParentProcessId=6788 | Table ParentCommandLine
 </code></pre>
 <p>→ /bin/bash <strong><a href="http://preinstall.sh">preinstall.sh</a></strong></p>
+<p><img src="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-9/achievement.png" alt="Achievement"><br>
+Solution of the objective: <strong>whiz</strong></p>
 
