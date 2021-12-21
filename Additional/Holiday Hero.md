@@ -15,7 +15,7 @@ In order to activate the single player mode, the following has to be done:</p>
 <li>click “Create Room”</li>
 <li>open the developer tools, Console</li>
 <li>select the game context c_{integer}</li>
-<li><code>single_player_mode=true</code><img src="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/holiday-hero-variable.png" alt="setting single player mode to true"></li>
+<li><code>single_player_mode=true</code> <img src="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/holiday-hero-variable.png" alt="setting single player mode to true"></li>
 <li>the game will state, that the computer joined as second player</li>
 <li>The computer will act as a perfect player, so the game result does only depend on your own capabilities.</li>
 </ul>
