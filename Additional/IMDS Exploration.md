@@ -11,17 +11,17 @@ PING 169.254.169.254 (169.254.169.254) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.014/0.014/0.014/0.000 ms
 elfu@c27f40ac7165:\~$ next
-elfu@c27f40ac7165:~$ curl http://169.254.169.254
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254
 latest
-elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest
 dynamic
 meta-data
-elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/dynamic
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest/dynamic
 fws/instance-monitoring
 instance-identity/document
 instance-identity/pkcs7
 instance-identity/signature
-elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/dynamic/instance-identity/document
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest/dynamic/instance-identity/document
 {
         "accountId": "PCRVQVHN4S0L4V2TE",
         "imageId": "ami-0b69ea66ff7391e80",
@@ -39,7 +39,7 @@ elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/dynamic/instance-identit
         "instanceType": "m4.xlarge",
         "region": "np-north-1"
 }
-elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/dynamic/instance-identity/document | q
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest/dynamic/instance-identity/document | q
 % Total % Received % Xferd Average Speed Time Time Time Current
 Dload Upload Total Spent Left Speed
 100 451 100 451 0 0 440k 0 --:--:-- --:--:-- --:--:-- 440k
@@ -65,13 +65,13 @@ curl http://169.254.169.254/latest/meta-data
 ami-id
 ami-launch-index
 [...]
-elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/meta-data/public-hostname
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest/meta-data/public-hostname
 ec2-192-0-2-54.compute-1.amazonaws.com
-elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/meta-data/public-hostname; echo
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest/meta-data/public-hostname; echo
 ec2-192-0-2-54.compute-1.amazonaws.com
-elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/meta-data/iam/security-credentials; echo
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest/meta-data/iam/security-credentials; echo
 elfu-deploy-role
-elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/elfu-deploy-role;echo
+elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest/meta-data/iam/security-credentials/elfu-deploy-role;echo
 {
         "Code": "Success",
         "LastUpdated": "2021-12-02T18:50:40Z",
@@ -81,16 +81,16 @@ elfu@c27f40ac7165:~$ curl http://169.254.169.254/latest/meta-data/iam/security-c
         "Token": "NR9Sz/7fzxwIgv7URgHRAckJK0JKbXoNBcy032XeVPqP8        /tWiR/KVSdK8FTPfZWbxQ==",
         "Expiration": "2026-12-02T18:50:40Z"
 }
-elfu@c27f40ac7165:~$ next
-elfu@c27f40ac7165:~$ cat gettoken.sh
+elfu@c27f40ac7165:\~$ next
+elfu@c27f40ac7165:\~$ cat gettoken.sh
 TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
-elfu@c27f40ac7165:~$ source gettoken.sh
+elfu@c27f40ac7165:\~$ source gettoken.sh
 % Total % Received % Xferd Average Speed Time Time Time Current
 Dload Upload Total Spent Left Speed
 100 44 100 44 0 0 44000 0 --:--:-- --:--:-- --:--:-- 44000
-elfu@c27f40ac7165:~$ echo $TOKEN
+elfu@c27f40ac7165:\~$ echo $TOKEN
 Uv38ByGCZU8WP18PmmIdcpVmx00QA3xNe7sEB9Hixkk=
-elfu@c27f40ac7165:~$ curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/placement/region
+elfu@c27f40ac7165:\~$ curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/placement/region
 np-north-1e
 </code></pre>
 <p><strong>Achievement: IMDS Exploration</strong></p>
