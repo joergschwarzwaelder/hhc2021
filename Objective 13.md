@@ -36,5 +36,8 @@ module tone_generator (
 	end
 endmodule
 </code></pre>
+<p><strong>Item: FPGA</strong><br>
+<strong>Achievement: FPGA Programming</strong></p>
+<p>After the FPGA is inserted into the device, the spaceship lands and opens the door.</p>
 <p><strong>Achievement: Open Spaceship’s Door</strong></p>
 
