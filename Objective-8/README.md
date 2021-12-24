@@ -132,10 +132,9 @@ dir
 		41089256 blocks of size 1024. 34373492 blocks available
 smb: \\&gt; Getting file SantaSecretToAWonderfulHolidaySeason.pdf
 Transferring file SantaSecretToAWonderfulHolidaySeason.pdf to local machine
-
- #
- # Have fun and explore more
- #
+#
+# Have fun and explore more
+#
 
 jsfdgdsjjl@grades:~$ 
 </code></pre>
