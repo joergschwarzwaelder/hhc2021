@@ -107,7 +107,7 @@ Logging on to grades.elfu.org using SSH
 Escaping the application using &lt;EOF&gt;
 Escaping the Python shell using os.system('bash')
 These shares are available on the file server
-smbclient -L '\\10.128.3.30'
+smbclient -L '\\\\10.128.3.30'
 Enter WORKGROUP\jsfdgdsjjl's password: 
 
 	Sharename       Type      Comment
