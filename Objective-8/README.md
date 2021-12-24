@@ -133,7 +133,7 @@ dir
 smb: \\&gt; Getting file SantaSecretToAWonderfulHolidaySeason.pdf
 Transferring file SantaSecretToAWonderfulHolidaySeason.pdf to local machine
 #
-# Have fun and explore more
+\# Have fun and explore more
 #
 
 jsfdgdsjjl@grades:~$ 
