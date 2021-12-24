@@ -130,7 +130,7 @@ dir
   SantaSecretToAWonderfulHolidaySeason.pdf      N   173932  Thu Dec  2 16:38:26 2021
 
 		41089256 blocks of size 1024. 34373492 blocks available
-smb: \&gt; Getting file SantaSecretToAWonderfulHolidaySeason.pdf
+smb: \\&gt; Getting file SantaSecretToAWonderfulHolidaySeason.pdf
 Transferring file SantaSecretToAWonderfulHolidaySeason.pdf to local machine
 
 #
