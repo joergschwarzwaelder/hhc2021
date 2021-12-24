@@ -120,10 +120,10 @@ Enter WORKGROUP\jsfdgdsjjl's password:
 Running GetUserSPNs.py using my user id to enumerate SPNs linked to user accounts and get their password hashes
 Running Hashcat to crack the password
   ok. Password is Snow2021!
-Getting access to samba \\10.128.3.30\elfu_svc_shr share as user elfu_svc
+Getting access to samba \\\\10.128.3.30\elfu_svc_shr share as user elfu_svc
 Obtaining file GetProcessInfo.ps1 which has credentials for remote_elf embedded
 Granting myself GenericAll permissions on AD group Research Department and adding myself to it
-Getting access to samba \\10.128.3.30\research_dep using my user id
+Getting access to samba \\\\10.128.3.30\research_dep using my user id
 dir
   .                                   D        0  Thu Dec  2 16:39:42 2021
   ..                                  D        0  Fri Dec 24 08:01:27 2021
