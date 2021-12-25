@@ -93,7 +93,7 @@ smb: \&gt; dir
 <p>The <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/SantaSecretToAWonderfulHolidaySeason.pdf">PDF document</a> lists <strong>Kindness</strong> as first secret ingredient for a wonderful holiday season.</p>
 <hr>
 <h3 id="bonus-automation---kerberoboting">Bonus: Automation - Kerberoboting</h3>
-<p>This whole process was automated in an <code>expect</code> script named <code>kerberoboting</code>, so that you can enjoy a brew whilst your computer does the work.<br>
+<p>This whole process was automated in an <code>expect</code> <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/kerberoboting">script</a> named <code>kerberoboting</code>, so that you can enjoy a brew whilst your computer does the work.<br>
 It just requires you to register at <a href="https://register.elfu.org">https://register.elfu.org</a>, have <code>hashcat</code> installed in the PATH and a working CeWL in the local directory:</p>
 <pre><code>joergen@northpole:~$ ./kerberoboting jsfdgdsjjl 'Ndcopkmbo#'
 #
