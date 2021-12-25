@@ -138,5 +138,6 @@ Transferring file SantaSecretToAWonderfulHolidaySeason.pdf to local machine
 
 jsfdgdsjjl@grades:~$ 
 </code></pre>
+<p>You can see <code>kerberoboting</code> in action here: <a href="https://asciinema.org/a/458522">https://asciinema.org/a/458522</a></p>
 <p><strong>Achievement: Kerberoasting on an Open Fire</strong></p>
 
