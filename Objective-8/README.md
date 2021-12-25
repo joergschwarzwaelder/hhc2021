@@ -67,8 +67,8 @@ $aCred = New-Object System.Management.Automation.PSCredential -ArgumentList ("el
 <pre><code>Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock {
   Add-Type -AssemblyName System.DirectoryServices
   $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
-  $username = "ptsuxvdegy"
-  $password = "Scumpfccr#"
+  $username = "{userid}"
+  $password = "{password}"
   $domainDirEntry = New-Object   System.DirectoryServices.DirectoryEntry $ldapConnString, $username, $password
   $user = New-Object System.Security.Principal.NTAccount("elfu.local\$username")
   $sid=$user.Translate([System.Security.Principal.SecurityIdentifier])
@@ -91,7 +91,8 @@ smb: \&gt; dir
 		41089256 blocks of size 1024. 34373492 blocks available
 </code></pre>
 <p>The <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/SantaSecretToAWonderfulHolidaySeason.pdf">PDF document</a> lists <strong>Kindness</strong> as first secret ingredient for a wonderful holiday season.</p>
-<h3 id="bonus-kerberoboting">Bonus: Kerberoboting</h3>
+<hr>
+<h3 id="bonus-automation---kerberoboting">Bonus: Automation - Kerberoboting</h3>
 <p>This whole process was automated in an <code>expect</code> script named <code>kerberoboting</code>, so that you can enjoy a brew whilst your computer does the work.<br>
 It just requires you to register at <a href="https://register.elfu.org">https://register.elfu.org</a>, have <code>hashcat</code> installed in the PATH and a working CeWL in the local directory:</p>
 <pre><code>joergen@northpole:~$ ./kerberoboting jsfdgdsjjl 'Ndcopkmbo#'
