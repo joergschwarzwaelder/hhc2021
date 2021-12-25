@@ -11,16 +11,23 @@ Then execute this script which enable you to automatically solve each level in E
   return new Promise(resolve =&gt; setTimeout(resolve,mils));
 }
 
+var mystage=-1;
 for(;;){
-  while(challenges[0][0][0]=="")await Sleep(1000);
+  while(stage==mystage)await Sleep(1000);
+  mystage=stage;
   for(var x=0;x&lt;=5;x++)
     for(var y=0;y&lt;=4;y++){
-      challenges[x][y][0]="";
-      challenges[x][y][1]=false;
-      checkWin();
+	  if (challenges[x][y][1]) {
+        document.getElementById(x + ',' + y).innerHTML = "";
+        challenges[x][y] = [[],[]];
+		score += 100;
+		document.getElementById("score").innerHTML = "&lt;h2&gt;" + score + "&lt;/h2&gt;";
+	  }
     }
+  checkWin();
 }
 </code></pre>
+<p>Automation in action: <a href="https://joergschwarzwaelder.github.io/Holiday%20Hack%20Challenge%202021%20-%20Logic%20-%20Munchers.webm">https://joergschwarzwaelder.github.io/Holiday Hack Challenge 2021 - Logic - Munchers.webm</a></p>
 <p><strong>Achievement: Logic Munchers</strong><br>
 The Elf provides hints for <a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-4">objective 4</a>:<br>
 <strong>Hint: Parameter Tampering</strong><br>
