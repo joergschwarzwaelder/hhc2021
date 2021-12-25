@@ -28,23 +28,30 @@
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-13">Objective 13: FPGA Programming</a></li>
 </ul>
 <h2 id="additional-tasks">Additional Tasks</h2>
+<h3 id="north-pole">North Pole</h3>
 <ul>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Open%20the%20Gate%20Challenge.md">Open the Gate Challenge</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Greppinf%20for%20Gold.md">Grepping for Gold</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Grepping%20for%20Gold.md">Grepping for Gold</a></li>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Login%20Munchers.md">Logic Munchers</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Bonus%20Blue%20Log4Jack.md">Bonus Blue Log4Jack</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Bonus%20Red%20Log4Jack.md">Bonus Red Log4Jack</a></li>
+</ul>
+<h3 id="santas-castle">Santa’s Castle</h3>
+<ul>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Yara%20Analysis.md">Yara Analysis</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Strace,%20Ltrace,%20Retrace.md">Strace, Ltrace, Retrace</a></li>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Elf%20Code%20Python.md">Elf Code Python</a></li>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Exif%20Metadata.md">Exif Metadata</a></li>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/HoHo...No.md">HoHo … No</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Holiday%25Hero.md">Holiday Hero</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Holiday%20Hero.md">Holiday Hero</a></li>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IPv6%20Sandbox.md">IPv6 Sandbox</a></li>
-<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Strange%20USB%20Device.md">Strange USB Device</a></li>
+<li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Strace,%20Ltrace,%20Retrace.md">Strace, Ltrace, Retrace</a></li>
+</ul>
+<h3 id="frost-tower">Frost Tower</h3>
+<ul>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Frostavator.md">Frostavator</a></li>
 <li><a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md">IMDS Exploration</a></li>
 </ul>
 <h2 id="holiday-eggs">Holiday Eggs</h2>
-<p>One <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md">Holiday Eggs</a> was discovered.</p>
+<p>One <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md">Holiday Egg</a> was discovered.</p>
 <h2 id="group-picture">Group Picture</h2>
 <p><img src="https://github.com/joergschwarzwaelder/hhc2020/blob/master/Group%20Picture.png-----" alt="-----Team's Group Picture"></p>
 
