@@ -141,7 +141,6 @@ while { true } {
   puts -nonewline $santa $expect_out(1,string)
 }
 close $santa
-#spawn base64 -di SantaSecretToAWonderfulHolidaySeason.pdf.b64 > SantaSecretToAWonderfulHolidaySeason.pdf
 spawn openssl enc -d -base64 -in SantaSecretToAWonderfulHolidaySeason.pdf.b64 -out SantaSecretToAWonderfulHolidaySeason.pdf
 send_user "${cyan}\n#\n# Have fun and explore more\n#\n"
 send -i $ssh_id "\r"
