@@ -1,6 +1,5 @@
 # Frostavator
-**Location: Tower Lobby, Frost Tower, Ground Floor**
-
+**Location: Tower Lobby, Frost Tower, Ground Floor**  
 **Troll: Grody Goiterson**
 
 The six logic gates of the Frostavator were mixed up.
