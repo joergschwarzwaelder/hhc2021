@@ -1,32 +1,38 @@
-<h1 id="elf-code-python">Elf Code Python</h1>
-<p><strong>Location: Dining Room, Santa’s Castle</strong><br>
-<strong>Elf: Ribb Bonbowford</strong></p>
-<p>This game is about getting familiar with Python.</p>
-<h3 id="level-1">Level 1:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+# Elf Code Python
+**Location: Dining Room, Santa's Castle, Ground Floor**
+**Elf: Ribb Bonbowford**
+
+This game is about getting familiar with Python.
+
+### Level 1:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 elf.moveLeft(10)
 elf.moveUp(10)
-</code></pre>
-<h3 id="level-2">Level 2:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```
+### Level 2:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 elf.moveLeft(10)
 elf.moveUp(2)
 elf.moveRight(3)
 elf.moveUp(2)
 elf.moveLeft(3)
 elf.moveUp(6)
-</code></pre>
-<h3 id="level-3">Level 3:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```
+### Level 3:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 lever0 = levers.get(0)
 lollipop0 = lollipops.get(0)
 elf.moveTo(lever0.position)
 lever0.pull(lever0.data()+2)
 elf.moveTo(lollipop0.position)
 elf.moveUp(10)
-</code></pre>
-<h3 id="level-4">Level 4:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```
+### Level 4:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 # Complete the code below:
 lever0, lever1, lever2, lever3, lever4 = levers.get()
 # Move onto lever4
@@ -43,9 +49,10 @@ lever1.pull(["Kingle","Con"])
 elf.moveTo(lever0.position)
 lever0.pull({"country" : "France", "worldcups" : 2})
 elf.moveUp(2)
-</code></pre>
-<h2 id="level-5">Level 5:</h2>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```
+## Level 5:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 lever0, lever1, lever2, lever3, lever4 = levers.get()
 elf.moveTo(lever4.position)
 lever4.pull(lever4.data()+" concatenate")
@@ -62,9 +69,10 @@ dict=lever0.data()
 dict['strkey']='strvalue'
 lever0.pull(dict)
 elf.moveUp(2)
-</code></pre>
-<h3 id="level-6">Level 6:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```
+### Level 6:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 lever = levers.get(0)
 elf.moveTo(lever.position)
 data = lever.data()
@@ -80,17 +88,19 @@ elif type(data) == dict:
     data['a']=data['a']+1
 lever.pull(data)
 elf.moveUp(2)
-</code></pre>
-<h3 id="level-7">Level 7:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```
+### Level 7:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 for num in range(3):
     elf.moveLeft(3)
     elf.moveUp(11)
     elf.moveLeft(2)
     elf.moveDown(11)
-</code></pre>
-<h3 id="level-8">Level 8:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```    
+### Level 8:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 all_lollipops = lollipops.get()
 for lollipop in all_lollipops:
     elf.moveTo(lollipop.position)
@@ -102,11 +112,13 @@ lever.pull(list)
 elf.moveDown(3)
 elf.moveLeft(6)
 elf.moveUp(2)
-</code></pre>
-<p>The achievement “Elf Code Python” is awarded after having completed level 8.</p>
-<h3 id="bonus-levels">Bonus Levels</h3>
-<h3 id="level-9">Level 9:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```
+**Achievement: Elf Code Python**
+
+### Bonus Levels
+### Level 9:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 
 def func_to_pass_to_munchkin(list_of_lists):
     return sum(list(map(lambda l : sum([i for i in l if isinstance(i,int)]),list_of_lists)))
@@ -114,26 +126,30 @@ def func_to_pass_to_munchkin(list_of_lists):
 munchkins.get(0).answer(func_to_pass_to_munchkin)
 all_levers = levers.get()
 moves = [elf.moveDown, elf.moveLeft, elf.moveUp, elf.moveRight] * 2
-
 for i, move in enumerate(moves):
     move(i+1)
-    if i&lt;len(all_levers):
+    if i<len(all_levers):
       all_levers[i].pull(i)
 elf.moveUp(2)
 elf.moveLeft(4)
 elf.moveUp(1)
-</code></pre>
-<h3 id="level-10">Level 10:</h3>
-<pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
+```
+### Level 10:
+```python
+import elf, munchkins, levers, lollipops, yeeters, pits
 import time
+
 muns = munchkins.get()
 lols = lollipops.get()[::-1]
 for index, mun in enumerate(muns):
-  while abs(mun.position["x"]-elf.position["x"])&lt;6:
-        time.sleep(0.1)
+  while abs(mun.position["x"]-elf.position["x"])<6:
+    time.sleep(0.1)
   elf.moveTo(lols[index].position)
 elf.moveLeft(6)
 elf.moveUp(2)
-</code></pre>
-<p>The achievement “Elf Code Python Bonus Levels!” is awarded after having completed level 10.</p>
+```
+**Achievement: Elf Code Python Bonus Levels!**
 
+The Elf provides hints for [objective 12](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-12), which are not captured in Avatar's hint section:
+**[Node.js express-session](https://www.npmjs.com/package/express-session)**
+**[mysqljs](https://github.com/mysqljs/mysql)**
