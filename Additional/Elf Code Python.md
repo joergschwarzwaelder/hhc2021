@@ -107,7 +107,7 @@ elf.moveUp(2)
 <h3 id="bonus-levels">Bonus Levels</h3>
 <h3 id="level-9">Level 9:</h3>
 <pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
-
+#
 def func_to_pass_to_munchkin(list_of_lists):
     return sum(list(map(lambda l : sum([i for i in l if isinstance(i,int)]),list_of_lists)))
 #
