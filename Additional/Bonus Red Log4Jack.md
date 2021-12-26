@@ -67,7 +67,7 @@ public class Joergen {
 *CLIENTIP* has to be replaced with the terminal's IP address.
 
 ### Alternative 2: pure Java solution, hence platform independant
-```java linenums="1"
+```java
 import java.io.*;
 import java.nio.file.*;
 import java.net.Socket;
