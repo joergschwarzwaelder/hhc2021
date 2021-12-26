@@ -5,7 +5,7 @@
 This challenge is about evaluating logic expressions and selecting all expressions which are "True".
 This is absolutely doable manually, but if you are lazy you are able to cheat.
 Open the browser's developer tools and switch to the console.
-Then select `game` in the context picker:
+Then select `game` in the context picker:  
 ![Context Picker](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Context-Picker.png)
 Then execute this script which enable you to automatically solve each level in Elves' speed:
 ```javascript
