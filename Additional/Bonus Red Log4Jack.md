@@ -38,7 +38,6 @@ Santa
 <h3 id="alternative-1-just-reading-the-targeted-file">Alternative 1: just reading the targeted file</h3>
 <pre><code>import java.io.*;
 import java.nio.file.*;
-
 public class Joergen {
   static {
     try {
@@ -59,7 +58,6 @@ public class Joergen {
 <pre><code>import java.io.*;
 import java.nio.file.*;
 import java.net.Socket;
-
 public class Joergen {
   static {
     try {
