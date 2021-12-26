@@ -4,7 +4,7 @@
 https://americanornithology.org/four-calling-birds/ establishes a link to the name of this year's HolidayHack Challenge (Calling Birds) and also to the past two: Turtle Doves and French Hens.  So I assume next year we will se KringleCon V: Golden Rings :)
 
 ### Frost Tower Wifi
-The MAC address of the Wifi dongle is 02:4A:46:68:69:21 which is "~STX~JFhi!"
+The MAC address of the Wifi dongle is 02:4A:46:68:69:21 which is "<sub>STX</sub>JFhi!"
 
 ### Frost Tower Roof
 Numby Chilblain says "Klatu Barada Nikto!" which is a citation from the film [The Day the Earth Stood Still](https://en.wikipedia.org/wiki/The_Day_the_Earth_Stood_Still).
