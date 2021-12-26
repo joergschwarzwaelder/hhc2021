@@ -50,7 +50,7 @@ elf.moveTo(lever0.position)
 lever0.pull({"country" : "France", "worldcups" : 2})
 elf.moveUp(2)
 ```
-## Level 5:
+### Level 5:
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 lever0, lever1, lever2, lever3, lever4 = levers.get()
