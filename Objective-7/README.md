@@ -5,9 +5,9 @@
 
 **Hints provided by Ruby Cyster after completion of [Shellcode Primer](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-6/README.md)**
 
-This objective is to get hold of the name of the latest file (type .xlsx) printed. This can be found on the printer in /var/spool/printer.log.
+This objective is to get hold of the name of the latest file (type .xlsx) printed. This can be found on the printer in `/var/spool/printer.log`.
 The web frontend of the printer has the capability to download the firmware currently being used and to upload a new signed firmware package.
-As an additional hint it was disclosed, that files dropped to /app/lib/public/incoming will be accessible in the web frontend in https://printer.kringlecastle.com/incoming
+As an additional hint it was disclosed, that files dropped to `/app/lib/public/incoming` will be accessible in the web frontend in https://printer.kringlecastle.com/incoming
 
 The high level approach to solve the objective is
 
