@@ -1,5 +1,6 @@
 # Objective 9: Splunk!
 **Location: Great Room, Santa's Castle, Ground Floor**
+
 **Elf: Angel Candysalt**
 
 This objective is about getting familiar with the Splunk platform.
