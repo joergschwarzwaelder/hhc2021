@@ -1,11 +1,15 @@
-<h1 id="objective-3-thaw-frost-towers-entrance">Objective 3: Thaw Frost Tower’s Entrance</h1>
-<p><strong>Location: Castle Approach</strong><br>
-<strong>Elf: Grimy McTrollkins</strong><br>
-<strong>Hints provided by Gready GopherGuts after completion of <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Grepping%20for%20Gold.md">Grepping for Gold</a></strong></p>
-<p>This objective is to thaw the frozen entrance to the Frost Tower.<br>
-To accomplish this, the Wifi Dongle received from Jingle Ringford has to be used.</p>
-<p>It is possible to the Wifi of the Frost Tower and to consume the API of the building management system to increase the temperature:</p>
-<pre><code>elf@a8b522b14ea5:~$ iwlist scan
+
+# Objective 3: Thaw Frost Tower's Entrance
+**Location: Castle Approach**
+**Elf: Grimy McTrollkins**
+**Hints provided by Gready GopherGuts after completion of [Grepping for Gold](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Grepping%20for%20Gold.md)**
+
+This objective is to thaw the frozen entrance to the Frost Tower.
+To accomplish this, the Wifi Dongle received from Jingle Ringford has to be used.
+
+It is possible to the Wifi of the Frost Tower and to consume the API of the building management system to increase the temperature:
+```
+elf@a8b522b14ea5:~$ iwlist scan
 wlan0     Scan completed :
           Cell 01 - Address: 02:4A:46:68:69:21
                     Frequency:5.2 GHz (Channel 40)
@@ -26,6 +30,6 @@ elf@a8b522b14ea5:~$ curl -XPOST -H 'Content-Type: application/json' --data-binar
   "windchill": 27.87,
   "WARNING": "ICE MELT DETECTED!"
 }
-</code></pre>
-<p><strong>Achievement: Thaw Frost Tower’s Entrance</strong></p>
+```
 
+**Achievement: Thaw Frost Tower's Entrance**
