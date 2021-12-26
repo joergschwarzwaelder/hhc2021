@@ -1,5 +1,6 @@
 # Objective 10: Now Hiring!
 **Location: https://apply.jackfrosttower.com/**
+
 **Hints provided by Noxious O. D'or after completion of [IMDS Exploration](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md)**
 
 This objective is about SSRF.
