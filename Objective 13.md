@@ -2,7 +2,8 @@
 <p><strong>Location: Frost Tower Rooftop, Frost Tower</strong><br>
 <strong>Troll: Crunchy Squishter</strong><br>
 <strong>Hints provided by Grody Goiterson after completion of <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Frostavator.md">Frostavator</a></strong></p>
-<p>The below Verilog FPGA code creates the requested square wave at the required frequencies:</p>
+<p>The below Verilog FPGA code creates the requested square wave at the required frequencies.<br>
+The rounding mentioned in the hints does not seem to be an issue.</p>
 <pre><code>`timescale 1ns/1ns
 module tone_generator (
     input clk,
