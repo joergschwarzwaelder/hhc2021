@@ -1,5 +1,5 @@
 # Bonus Blue Log4Jack
-**Location: North Pole**
+**Location: North Pole**  
 **Elf: Bow Ninecandle**
 
 This exercise runs in a Cranberry Pi terminal.
