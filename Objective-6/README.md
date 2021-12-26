@@ -1,6 +1,8 @@
 # Objective 6: Shellcode Primer
 **Location: Jack's Office, Frost Tower, 16<sup>th</sup> Floor, https://tracer.kringlecastle.com/**
+
 **Elf: Ruby Cyster**
+
 **Hints provided by Chimney Scissorsticks after completion of [Holiday Hero](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Holiday%20Hero.md)**
 
 This objective is a small training in x86 assembly language (basics and performing system calls). The background is to be able to create shellcode payloads to be used in system attacks.
