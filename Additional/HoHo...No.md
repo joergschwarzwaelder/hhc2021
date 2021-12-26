@@ -1,7 +1,7 @@
 <h1 id="hoho-...-no">HoHo … No</h1>
 <p><strong>Location: Santa’s Office, Santa’s Castle, 3<sup>rd</sup> Floor</strong><br>
 <strong>Elf: Eve Snowshoes</strong></p>
-<p>This game is about getting familiar with fain2ban.</p>
+<p>This game is about getting familiar with Fail2Ban.</p>
 <p>The following files were prepared to filter the malicious requests from the log file and to trigger the addition to the naughty list.</p>
 <p>/etc/fail2ban/action.d/hohono.conf:</p>
 <pre><code>[Definition]
@@ -29,11 +29,11 @@ ignoreregex= &lt;HOST&gt;: Request completed successfully$\b
              Valid heartbeat from &lt;HOST&gt;$\b
              Login from &lt;HOST&gt; successful$\b
 </code></pre>
-<p>After creatiion of these files, the fail2ban service is restarted and the processing of the log file triggered:</p>
+<p>After creation of these files, the Fail2Ban service is restarted and the processing of the log file triggered:</p>
 <pre><code>root@930652a879a9:/etc/fail2ban# service fail2ban restart
 root@930652a879a9:/etc/fail2ban# /root/naughtylist refresh
 </code></pre>
-<p><strong>Achievement "HoHo … No"</strong><br>
+<p><strong>Achievement: HoHo … No</strong><br>
 <strong>Objective 8 unlocked</strong><br>
 The Elf provides hints for <a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-8">objective 8</a>:<br>
 <strong>Hint: Kerberoast and AD Abuse Talk</strong><br>
