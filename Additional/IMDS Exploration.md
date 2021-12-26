@@ -15,6 +15,7 @@ PING 169.254.169.254 (169.254.169.254) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.014/0.014/0.014/0.000 ms
 ```
+---
 ```bash
 elfu@c27f40ac7165:\~$ next
 elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest
