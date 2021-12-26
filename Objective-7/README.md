@@ -14,7 +14,7 @@ The high level approach to solve the objective is
  - retrieve the current firmware
  - add an own payload to the firmware whilst keeping the firmware package signature intact
  - upload the new firmware
- - retrieve file /var/spool/printer.log
+ - retrieve file `/var/spool/printer.log`
 
 ### Analysis of the original firmware package downloaded from the printer
 The firmware package is a JSON file consisting out of these data fields:
