@@ -1,6 +1,8 @@
 # Objective 13: FPGA Programming
 **Location: Frost Tower Rooftop, Frost Tower**
+
 **Troll: Crunchy Squishter**
+
 **Hints provided by Grody Goiterson after completion of [Frostavator](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Frostavator.md)**
 
 The below Verilog FPGA code creates the requested square wave at the required frequencies.
