@@ -12,10 +12,7 @@ One sample solution (AND OR NOR / NAND XNOR XOR):
 Brute force attack [script](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/frostavator-broteforce.pl) for the Frostavator.
 
 
-**Achievement: Frostavator**
-
-The Elf provides hints for [objective 13](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-13):
-
-**Hint: FPGA for Fun**
-
+**Achievement: Frostavator**  
+The Elf provides hints for [objective 13](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-13):  
+**Hint: FPGA for Fun**  
 **Hint: FPGA Talk**
