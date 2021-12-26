@@ -7,6 +7,7 @@ It is completely guided exercise.
 ```bash
 elfu@c27f40ac7165:~$ ping -c1 169.254.169.254
 ```
+```
 PING 169.254.169.254 (169.254.169.254) 56(84) bytes of data.
 64 bytes from 169.254.169.254: icmp_seq=1 ttl=64 time=0.014 ms
 
