@@ -80,6 +80,7 @@ index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operatio
 → /bin/bash **preinstall.sh**
 
 ![Achievement](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-9/achievement.png)
+
 Solution of the objective: **whiz**
 
 **Achievement: Splunk!**
