@@ -1,5 +1,5 @@
 <h1 id="objective-9-splunk">Objective 9: Splunk!</h1>
-<p><strong>Location: Great Room</strong><br>
+<p><strong>Location: Great Room, Santa’s Castle, Ground Floor</strong><br>
 <strong>Elf: Angel Candysalt</strong></p>
 <p>This objective is about getting familiar with the Splunk platform.</p>
 <h3 id="task-1">Task 1:</h3>
@@ -51,4 +51,5 @@ index=main sourcetype=github_json
 <p>→ /bin/bash <strong><a href="http://preinstall.sh">preinstall.sh</a></strong></p>
 <p><img src="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-9/achievement.png" alt="Achievement"><br>
 Solution of the objective: <strong>whiz</strong></p>
+<p><strong>Achievement: Splunk!</strong></p>
 
