@@ -1,5 +1,6 @@
 # Elf Code Python
 **Location: Dining Room, Santa's Castle, Ground Floor**
+
 **Elf: Ribb Bonbowford**
 
 This game is about getting familiar with Python.
