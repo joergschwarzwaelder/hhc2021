@@ -9,7 +9,7 @@
 This objective is to thaw the frozen entrance to the Frost Tower.
 To accomplish this, the Wifi Dongle received from Jingle Ringford has to be used.
 
-It is possible connect to the Wifi of the Frost Tower and to consume the API of the building management system to increase the temperature:
+It is possible connect to the Wifi of the Frost Tower and to consume the API (documented in http://nidus-setup:8080/apidoc) of the building management system to increase the temperature:
 ```
 elf@a8b522b14ea5:~$ iwlist scan
 wlan0     Scan completed :
