@@ -1,7 +1,6 @@
 
 # Objective 2: Where in the World is Caramel Santaigo
-**Location: Courtyard, Santa's Castle, Ground Floor**
-
+**Location: Courtyard, Santa's Castle, Ground Floor**  
 **Elf: Tangle Coalbox**
 
 **Hints provided by Piney Sappington after completion of [Exif Metadata](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Exif%20Metadata.md)**
