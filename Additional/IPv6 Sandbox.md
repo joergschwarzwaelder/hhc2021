@@ -23,7 +23,7 @@ A curl against port 9000</p>
 <pre><code>curl --interface eth0 -6 http://[fe80::42:c0ff:fea8:a002]:9000
 </code></pre>
 <p>returns the activation phrase <strong>PieceOnEarth</strong>.</p>
-<p><strong>Achievement "IPv6 Sandbox"</strong><br>
+<p><strong>Achievement: IPv6 Sandbox</strong><br>
 The Elf provides hints for <a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-5">objective 5</a>:<br>
 <strong>Hint: Ducky Script</strong><br>
 <strong>Hint: Duck Encoder</strong><br>
