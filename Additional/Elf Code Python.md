@@ -124,8 +124,10 @@ elf.moveLeft(4)
 elf.moveUp(1)
 </code></pre>
 <h3 id="level-10">Level 10:</h3>
+<!-- prettier-ignore -->
 <pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
 import time
+
 muns = munchkins.get()
 lols = lollipops.get()[::-1]
 for index, mun in enumerate(muns):
