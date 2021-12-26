@@ -5,7 +5,7 @@
 <p>This objective is to perform a security assessment of the Frost Tower website with the <a href="https://download.holidayhackchallenge.com/2021/frosttower-web.zip">source code</a> being provided.<br>
 It has to be found, which job position Jack Frost plans to offer Santa on his todo list.</p>
 <h3 id="auth-flaw">Auth flaw</h3>
-<p>The application tracks the user’s session in “session” (login name, user’s role etc.).<br>
+<p>The application tracks the user’s session in <code>session</code> (login name, user’s role etc.).<br>
 It was found that a valid session is also set, if you complete the <a href="https://staging.jackfrosttower.com/contact">contact form</a> whilst the email address is already captured in the database. So you could just register twice to get a valid user session for an unprivileged user.</p>
 <pre><code>app.post('/postcontact', function(req, res, next){
 [...]
