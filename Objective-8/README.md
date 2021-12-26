@@ -56,7 +56,7 @@ With this information we can get access to the elfu_svc_shr file share on 10.128
 ```
 smbclient -U elfu_svc '\\10.128.3.30\elfu_svc_shr'
 ```
-On this share are several Powershell scripts. One of them, `GetProcessInfo.ps1` holds credentials for the user `remote_elf`:
+On this share are several Powershell scripts. One of them, `GetProcessInfo.ps1`, holds credentials for the user `remote_elf`:
 ```
 $SecStringPassword = "76492d1116743f0423413b16050a5345MgB8AGcAcQBmAEIAMgBiAHUAMwA5AGIAbQBuAGwAdQAwAEIATgAwAEoAWQBuAGcAPQA9AHwANgA5ADgAMQA1ADIANABmAGIAMAA1AGQAOQA0AGMANQBlADYAZAA2ADEAMgA3AGIANwAxAGUAZgA2AGYAOQBiAGYAMwBjADEAYwA5AGQANABlAGMAZAA1ADUAZAAxADUANwAxADMAYwA0ADUAMwAwAGQANQA5ADEAYQBlADYAZAAzADUAMAA3AGIAYwA2AGEANQAxADAAZAA2ADcANwBlAGUAZQBlADcAMABjAGUANQAxADEANgA5ADQANwA2AGEA"
 $aPass = $SecStringPassword | ConvertTo-SecureString -Key 2,3,1,6,2,8,9,9,4,3,4,5,6,8,7,7
