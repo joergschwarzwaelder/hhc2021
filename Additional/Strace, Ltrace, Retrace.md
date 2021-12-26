@@ -1,5 +1,5 @@
 # Strace, Ltrace, Retrace
-**Location: Kitchen, Santa's Castle, Ground Floor**
+**Location: Kitchen, Santa's Castle, Ground Floor**  
 **Elf: Tinsel Upatree**
 
 This objective is about getting familiar with the tools to perform a runtime analysis of executables.
@@ -33,7 +33,7 @@ kotton_kandy_co@e9d0d43a904b:~$ cat registration.json
 }
 ```
 
-**Achievement: Strace Ltrace Retrace**
-The Elf provides hints for [objective 11](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-11):
-**Hint: Evil Bit RFC**
+**Achievement: Strace Ltrace Retrace**  
+The Elf provides hints for [objective 11](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-11):  
+**Hint: Evil Bit RFC**  
 **Hint: Wireshark Display Filters**
