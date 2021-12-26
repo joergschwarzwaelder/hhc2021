@@ -19,14 +19,14 @@ mov rax,1337  ; return value
 ret
 ```
 5. System Calls
-```
+```asm
 mov rax,60    ; sys_exit
 mov rdi,99    ; return code
 syscall
 ```
 6. Calling Into the Void
 7. Getting RIP
-```
+```asm
 call place_below_the_nop
 nop
 place_below_the_nop:
@@ -34,7 +34,7 @@ pop rax       ; pop pointer to NOP from stack
 ret
 ```
 8. Hello, World!
-```
+```asm
 call go
 db 'Hello World',0
 go:
@@ -42,7 +42,7 @@ pop rax       ; pop pointer to string from stack
 ret
 ```
 9. Hello World!!
-```
+```asm
 call go
 db 'Hello World!',0
 go:
@@ -54,7 +54,7 @@ syscall
 ret
 ```
 10. Opening a File
-```
+```asm
 call go
 db '/etc/passwd',0
 go:
@@ -66,7 +66,7 @@ syscall
 ret
 ```
 11. Reading a File
-```
+```asm
 call go
 db '/var/northpolesecrets.txt',0
 go:
