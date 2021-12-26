@@ -10,11 +10,11 @@ This objective is a small training in x86 assembly language (basics and performi
 1. Introduction
 2. Loops
 3. Getting Started
-```
+```asm
 ret
 ```
 4. Returning a Value
-```
+```asm
 mov rax,1337  ; return value
 ret
 ```
