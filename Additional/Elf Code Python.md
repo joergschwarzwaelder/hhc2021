@@ -1,5 +1,5 @@
 <h1 id="elf-code-python">Elf Code Python</h1>
-<p><strong>Location: Dining Room, Santa’s Castle</strong><br>
+<p><strong>Location: Dining Room, Santa’s Castle, Ground Floor</strong><br>
 <strong>Elf: Ribb Bonbowford</strong></p>
 <p>This game is about getting familiar with Python.</p>
 <h3 id="level-1">Level 1:</h3>
@@ -103,7 +103,7 @@ elf.moveDown(3)
 elf.moveLeft(6)
 elf.moveUp(2)
 </code></pre>
-<p>The achievement “Elf Code Python” is awarded after having completed level 8.</p>
+<p><strong>Achievement: Elf Code Python</strong></p>
 <h3 id="bonus-levels">Bonus Levels</h3>
 <h3 id="level-9">Level 9:</h3>
 <pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
@@ -135,5 +135,8 @@ for index, mun in enumerate(muns):
 elf.moveLeft(6)
 elf.moveUp(2)
 </code></pre>
-<p>The achievement “Elf Code Python Bonus Levels!” is awarded after having completed level 10.</p>
+<p><strong>Achievement: Elf Code Python Bonus Levels!</strong></p>
+<p>The Elf provides hints for <a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-12">objective 12</a>, which are not captured in Avatar’s hint section:<br>
+<strong><a href="https://www.npmjs.com/package/express-session">Node.js express-session</a></strong><br>
+<strong><a href="https://github.com/mysqljs/mysql">mysqljs</a></strong></p>
 
