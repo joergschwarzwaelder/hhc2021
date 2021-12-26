@@ -1,5 +1,5 @@
 # Holiday Hero
-**Location: NetWars, Santa's Castle, Roof**
+**Location: NetWars, Santa's Castle, Roof**  
 **Elf: Chimney Scissorsticks**
 
 This game can be completed in two different ways, Two player mode or single player mode.
@@ -21,8 +21,8 @@ In order to activate the single player mode, the following has to be done:
   - the game will state, that the computer joined as second player
   - The computer will act as a perfect player, so the game result does only depend on your own capabilities.
 
-**Achievement: Holiday Hero**
-The Elf provides hints for [objective 6](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-6):
-**Hint: Shellcode Primer Primer**
-**Hint: Debugging Shellcode**
+**Achievement: Holiday Hero**  
+The Elf provides hints for [objective 6](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-6):  
+**Hint: Shellcode Primer Primer**  
+**Hint: Debugging Shellcode**  
 **Hint: Register Stomping**
