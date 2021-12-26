@@ -1,5 +1,6 @@
 # Frostavator
 **Location: Tower Lobby, Frost Tower, Ground Floor**
+
 **Troll: Grody Goiterson**
 
 The six logic gates of the Frostavator were mixed up.
@@ -13,6 +14,9 @@ Brute force attack [script](https://github.com/joergschwarzwaelder/hhc2021/blob/
 
 
 **Achievement: Frostavator**
+
 The Elf provides hints for [objective 13](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-13):
+
 **Hint: FPGA for Fun**
+
 **Hint: FPGA Talk**
