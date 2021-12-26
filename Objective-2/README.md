@@ -20,4 +20,11 @@ Cookie: Cookiepella
 In order to get this information, the part between the leading dot and the second dot has to be decoded with [Cyberchef](https://gchq.github.io/CyberChef/) using a Base64 decode with URL-safe alphabet followed by a Zlib inflate. This results in a JSON containing the data required to win the game:
 
 ![Cyberchef](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-2/cyberchef.png)
+So in this specific case:
+
+ - Travel to Copenhagen
+ - Travel to New York
+ - Travel to Reykjavik
+ - The Elf found is Sparkle Redberry
+
 **Achievement: Where in the World in Caramel Santaigo**
