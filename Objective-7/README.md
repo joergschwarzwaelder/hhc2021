@@ -1,8 +1,6 @@
 # Objective 7: Printer Exploitation
-****Location: Jack's Office, Frost Tower, 16<sup>th</sup> Floor, https://printer.kringlecastle.com/**
-
-**Troll: Ruby Cyster**
-
+****Location: Jack's Office, Frost Tower, 16<sup>th</sup> Floor, https://printer.kringlecastle.com/**  
+**Troll: Ruby Cyster**  
 **Hints provided by Ruby Cyster after completion of [Shellcode Primer](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-6/README.md)**
 
 This objective is to get hold of the name of the latest file (type .xlsx) printed. This can be found on the printer in `/var/spool/printer.log`.
