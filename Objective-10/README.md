@@ -1,6 +1,5 @@
 # Objective 10: Now Hiring!
-**Location: https://apply.jackfrosttower.com/**
-
+**Location: https://apply.jackfrosttower.com/**  
 **Hints provided by Noxious O. D'or after completion of [IMDS Exploration](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md)**
 
 This objective is about SSRF.
@@ -41,6 +40,5 @@ jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
 }
 ```
 So the secret access key for the S3 bucket is **CGgQcSdERePvGgr058r3PObPq3+0CfraKcsLREpX**
-
 
 **Achievement: SSRF to IMDS to S3 Bucket Access**
