@@ -1,6 +1,8 @@
 # Objective 8: Kerberoasting on an Open Fire
 **Location: Staging**
+
 **Elf: Jingle Ringford**
+
 **Hints provided by Eve Snowshoes after completion of [HoHo ... No](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/HoHo...No.md)**
 
 The objective to obtain a secret research document.
