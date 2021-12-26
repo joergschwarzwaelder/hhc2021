@@ -2,7 +2,7 @@
 **Location: NetWars, Santa's Castle, Roof**  
 **Elf: Chimney Scissorsticks**
 
-This game can be completed in two different ways, Two player mode or single player mode.
+This game can be completed in two different ways, two player mode or single player mode.
 
 ### Two Player Mode
 The game score depends on the capability of both players. It is doable, but you need to concentrate on the game; the same applies of course to the other player. Furthermore, some browsers tend to have some lag in this game.
