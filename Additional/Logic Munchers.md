@@ -1,5 +1,5 @@
 # Logic Munchers
-**Location: North Pole**
+**Location: North Pole**  
 **Elf: Noel Boetie**
 
 This challenge is about evaluating logic expressions and selecting all expressions which are "True".
@@ -31,7 +31,7 @@ for(;;){
 ```
 Automation in action: https://joergschwarzwaelder.github.io/Holiday%20Hack%20Challenge%202021%20-%20Logic%20-%20Munchers.webm
 
-**Achievement: Logic Munchers**
-The Elf provides hints for [objective 4](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-4):
-**Hint: Parameter Tampering**
+**Achievement: Logic Munchers**  
+The Elf provides hints for [objective 4](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-4):  
+**Hint: Parameter Tampering**  
 **Hint: Intercepting Proxies**
