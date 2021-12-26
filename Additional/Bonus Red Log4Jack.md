@@ -1,5 +1,5 @@
 # Bonus Red Log4Jack
-**Location: North Pole**
+**Location: North Pole**  
 **Troll: Icky McGoop**
 
 This exercise runs in a Cranberry Pi terminal, focusing on exploiting the Log4J vulnerability recently discovered.
