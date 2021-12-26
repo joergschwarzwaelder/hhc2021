@@ -22,7 +22,7 @@ In order to activate the single player mode, the following has to be done:</p>
 </ul>
 </li>
 </ul>
-<p><strong>Achievement "Holiday Hero"</strong><br>
+<p><strong>Achievement: Holiday Hero</strong><br>
 The Elf provides hints for <a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-6">objective 6</a>:<br>
 <strong>Hint: Shellcode Primer Primer</strong><br>
 <strong>Hint: Debugging Shellcode</strong><br>
