@@ -1,5 +1,5 @@
 # IMDS Exploration
-**Location: Restroom, Frost Tower, 16<sup>th</sup> Floor**
+**Location: Restroom, Frost Tower, 16<sup>th</sup> Floor**  
 **Troll: Noxious O. D'or**
 
 This objective is a training about what data could be retrieved from the Instance Metadata Service (IMDS) in cloud environments.
@@ -152,7 +152,6 @@ elfu@c27f40ac7165:\~$ curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.
 np-north-1e
 ```
 
-**Achievement: IMDS Exploration**
-
-The Troll provides hints for [objective 10](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-10):
+**Achievement: IMDS Exploration**  
+The Troll provides hints for [objective 10](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-10):  
 **Hint: AWS IMDS Documentation**

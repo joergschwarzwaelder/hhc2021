@@ -1,5 +1,5 @@
 # HoHo ... No
-**Location: Santa's Office, Santa's Castle, 3<sup>rd</sup> Floor**
+**Location: Santa's Office, Santa's Castle, 3<sup>rd</sup> Floor**  
 **Elf: Eve Snowshoes**
 
 This game is about getting familiar with Fail2Ban.
@@ -41,13 +41,13 @@ After creation of these files, the Fail2Ban service is restarted and the process
 root@930652a879a9:/etc/fail2ban# service fail2ban restart
 root@930652a879a9:/etc/fail2ban# /root/naughtylist refresh
 ```
-**Achievement: HoHo ... No**
-**Objective 8 unlocked**
-The Elf provides hints for [objective 8](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-8):
-**Hint: Kerberoast and AD Abuse Talk**
-**Hint: Kerberoasting and Hashcat Syntax**
-**Hint: Finding Domain Controllers**
-**Hint: Hashcat Mangling Rules**
-**Hint: CeWL for Wordlist Creation**
-**Hint: Stored Credentials**
+**Achievement: HoHo ... No**  
+**Objective 8 unlocked**  
+The Elf provides hints for [objective 8](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-8):  
+**Hint: Kerberoast and AD Abuse Talk**  
+**Hint: Kerberoasting and Hashcat Syntax**  
+**Hint: Finding Domain Controllers**  
+**Hint: Hashcat Mangling Rules**  
+**Hint: CeWL for Wordlist Creation**  
+**Hint: Stored Credentials**  
 **Hint: Active Directory Interrogation**

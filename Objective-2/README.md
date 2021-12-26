@@ -1,7 +1,8 @@
 
 # Objective 2: Where in the World is Caramel Santaigo
-**Location: Courtyard, Santa's Castle, Ground Floor**
+**Location: Courtyard, Santa's Castle, Ground Floor**  
 **Elf: Tangle Coalbox**
+
 **Hints provided by Piney Sappington after completion of [Exif Metadata](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Exif%20Metadata.md)**
 
 This objective based on a game in a Cranberry Pi terminal.
@@ -18,4 +19,11 @@ Cookie: Cookiepella
 In order to get this information, the part between the leading dot and the second dot has to be decoded with [Cyberchef](https://gchq.github.io/CyberChef/) using a Base64 decode with URL-safe alphabet followed by a Zlib inflate. This results in a JSON containing the data required to win the game:
 
 ![Cyberchef](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-2/cyberchef.png)
+So in this specific case:
+
+ - Travel to Copenhagen
+ - Travel to New York
+ - Travel to Reykjavik
+ - The Elf found is Sparkle Redberry
+
 **Achievement: Where in the World in Caramel Santaigo**

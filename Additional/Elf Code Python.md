@@ -1,5 +1,5 @@
 # Elf Code Python
-**Location: Dining Room, Santa's Castle, Ground Floor**
+**Location: Dining Room, Santa's Castle, Ground Floor**  
 **Elf: Ribb Bonbowford**
 
 This game is about getting familiar with Python.
@@ -50,7 +50,7 @@ elf.moveTo(lever0.position)
 lever0.pull({"country" : "France", "worldcups" : 2})
 elf.moveUp(2)
 ```
-## Level 5:
+### Level 5:
 ```python
 import elf, munchkins, levers, lollipops, yeeters, pits
 lever0, lever1, lever2, lever3, lever4 = levers.get()
@@ -150,6 +150,6 @@ elf.moveUp(2)
 ```
 **Achievement: Elf Code Python Bonus Levels!**
 
-The Elf provides hints for [objective 12](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-12), which are not captured in Avatar's hint section:
-**[Node.js express-session](https://www.npmjs.com/package/express-session)**
+The Elf provides hints for [objective 12](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-12), which are not captured in Avatar's hint section:  
+**[Node.js express-session](https://www.npmjs.com/package/express-session)**  
 **[mysqljs](https://github.com/mysqljs/mysql)**

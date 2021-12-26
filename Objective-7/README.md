@@ -1,18 +1,18 @@
 # Objective 7: Printer Exploitation
-****Location: Jack's Office, Frost Tower, 16<sup>th</sup> Floor, https://printer.kringlecastle.com/**
-**Troll: Ruby Cyster**
+****Location: Jack's Office, Frost Tower, 16<sup>th</sup> Floor, https://printer.kringlecastle.com/**  
+**Troll: Ruby Cyster**  
 **Hints provided by Ruby Cyster after completion of [Shellcode Primer](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-6/README.md)**
 
-This objective is to get hold of the name of the latest file (type .xlsx) printed. This can be found on the printer in /var/spool/printer.log.
+This objective is to get hold of the name of the latest file (type .xlsx) printed. This can be found on the printer in `/var/spool/printer.log`.
 The web frontend of the printer has the capability to download the firmware currently being used and to upload a new signed firmware package.
-As an additional hint it was disclosed, that files dropped to /app/lib/public/incoming will be accessible in the web frontend in https://printer.kringlecastle.com/incoming
+As an additional hint it was disclosed, that files dropped to `/app/lib/public/incoming` will be accessible in the web frontend in https://printer.kringlecastle.com/incoming
 
 The high level approach to solve the objective is
 
  - retrieve the current firmware
  - add an own payload to the firmware whilst keeping the firmware package signature intact
  - upload the new firmware
- - retrieve file /var/spool/printer.log
+ - retrieve file `/var/spool/printer.log`
 
 ### Analysis of the original firmware package downloaded from the printer
 The firmware package is a JSON file consisting out of these data fields:

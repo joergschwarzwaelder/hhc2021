@@ -1,20 +1,20 @@
 # Objective 9: Splunk!
-**Location: Great Room, Santa's Castle, Ground Floor**
+**Location: Great Room, Santa's Castle, Ground Floor**  
 **Elf: Angel Candysalt**
 
 This objective is about getting familiar with the Splunk platform.
 ### Task 1:
 Capture the commands Eddie ran most often, starting with git. Looking only at his process launches as reported by Sysmon, record the most common git-related CommandLine that Eddie seemed to use.
-``
+```
 index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational EventCode=1 User=eddie | stats count by CommandLine | sort – count
-``
+```
 **git status**
 
 ### Task 2:
 Looking through the git commands Eddie ran, determine the remote repository that he configured as the origin for the 'partnerapi' repo. The correct one!
-``
+```
 index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational EventCode=1 User=eddie CommandLine=*git* CommandLine=*partnerapi* | table CommandLine
-``
+```
 **git@github.com:elfnp3/partnerapi.git**
 
 ### Task 3:
@@ -79,6 +79,7 @@ index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operatio
 → /bin/bash **preinstall.sh**
 
 ![Achievement](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-9/achievement.png)
+
 Solution of the objective: **whiz**
 
 **Achievement: Splunk!**

@@ -1,6 +1,5 @@
 # SANS Holiday Hack Challenge 2021
-**Write-up submitted by Joerg Schwarzwaelder**
-
+**Write-up submitted by Joerg Schwarzwaelder**  
 **In-game character: joergen**
 
 **Disclaimer:** All information and code in this repository is provided as-is, probably not without errors and not ready for production use.
@@ -15,7 +14,7 @@
 
 [Map of the Game](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Map.md)
 
-[Location of the relevant Elf characters](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Elf%20Directory.md)
+[Location of the NPC Characters](https://github.com/joergschwarzwaelder/hhc2021/blob/master/NPC%20Directory.md)
 
 [List of Game Items](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Items.md)
 

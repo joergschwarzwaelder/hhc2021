@@ -1,5 +1,5 @@
 # Yara Analysis
-**Location: Entry, Santa's Castle, Ground Floor**
+**Location: Entry, Santa's Castle, Ground Floor**  
 **Elf: Fitzy Shortstack**
 
 This challenge is based on a Cranberry Pi terminal and is about modifying a binary to escape an existing YARA ruleset.
@@ -9,7 +9,16 @@ snowball2@1f8d0eab2566:~$ ./the_critical_elf_app
 yara_rule_135 ./the_critical_elf_app
 ```
 Rule 135 defines `candycane` to be a malicious string.
-So the executable was hex dumped and the string changed to `candycone`.
+So the executable was hex dumped and the string changed to `candycone`:
+```
+snowball2@1f8d0eab2566:~$ xxd the_critical_elf_app > the_critical_elf_app.xxd
+```
+```
+00002000: 0100 0200 0000 0000 6361 6e64 7963 6f6e ........candycon
+```
+```
+snowball2@1f8d0eab2566:~$ xxd -r the_critical_elf_app.xxd > the
+```
 
 Running the modified binary results in Yara rule 1056 matching:
 ```
@@ -17,9 +26,12 @@ snowball2@1f8d0eab2566:~$ ./the
 yara_rule_1056 ./the
 ```
 This rule defines `rogram!!` as malicious.
-We replace the first `!` in the binary with a blank.
+We replace the first `!` in the binary with a blank:
+```
+00002050: 6973 2070 726f 6772 616d 2021 0000 0000 is program !....
+```
 
-In next run Yara rule 1732 matches:
+In the next run Yara rule 1732 matches:
 ```
 snowball2@1f8d0eab2566:~$ ./the
 yara_rule_1732 ./the
@@ -40,8 +52,8 @@ Candy Sweetness Gauge: Exceedingly Sugarlicious
 Elf Jolliness Quotient: 4a6f6c6c7920456e6f7567682c204f76657274696d6520417070726f766564
 ```
 
-**Achievement: Yara Analysis**
-The Elf provides hints for [objective 9](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-9):
-**Hint: GitHub monitoring in Splunk**
-**Hint: Sysmon Monitoring in Splunk**
+**Achievement: Yara Analysis**  
+The Elf provides hints for [objective 9](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-9):  
+**Hint: GitHub monitoring in Splunk**  
+**Hint: Sysmon Monitoring in Splunk**  
 **Hint: Malicious NetCat??**

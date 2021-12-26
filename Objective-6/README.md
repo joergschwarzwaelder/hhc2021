@@ -1,6 +1,6 @@
 # Objective 6: Shellcode Primer
-**Location: Jack's Office, Frost Tower, 16<sup>th</sup> Floor, https://tracer.kringlecastle.com/**
-**Elf: Ruby Cyster**
+**Location: Jack's Office, Frost Tower, 16<sup>th</sup> Floor, https://tracer.kringlecastle.com/**  
+**Elf: Ruby Cyster**  
 **Hints provided by Chimney Scissorsticks after completion of [Holiday Hero](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Holiday%20Hero.md)**
 
 This objective is a small training in x86 assembly language (basics and performing system calls). The background is to be able to create shellcode payloads to be used in system attacks.
@@ -8,23 +8,23 @@ This objective is a small training in x86 assembly language (basics and performi
 1. Introduction
 2. Loops
 3. Getting Started
-```
+```asm
 ret
 ```
 4. Returning a Value
-```
+```asm
 mov rax,1337  ; return value
 ret
 ```
 5. System Calls
-```
+```asm
 mov rax,60    ; sys_exit
 mov rdi,99    ; return code
 syscall
 ```
 6. Calling Into the Void
 7. Getting RIP
-```
+```asm
 call place_below_the_nop
 nop
 place_below_the_nop:
@@ -32,7 +32,7 @@ pop rax       ; pop pointer to NOP from stack
 ret
 ```
 8. Hello, World!
-```
+```asm
 call go
 db 'Hello World',0
 go:
@@ -40,7 +40,7 @@ pop rax       ; pop pointer to string from stack
 ret
 ```
 9. Hello World!!
-```
+```asm
 call go
 db 'Hello World!',0
 go:
@@ -52,7 +52,7 @@ syscall
 ret
 ```
 10. Opening a File
-```
+```asm
 call go
 db '/etc/passwd',0
 go:
@@ -64,7 +64,7 @@ syscall
 ret
 ```
 11. Reading a File
-```
+```asm
 call go
 db '/var/northpolesecrets.txt',0
 go:
@@ -89,8 +89,7 @@ syscall
 ```
 The content of the file from step 11 is "Secret to KringleCon success: all of our speakers and organizers, providing the gift of **cyber security knowledge**, free to the community."
 
-**Achievement: Shellcode Primer**
-
-**Hint: Printer Firmware**
-**Hint: Hash Extension Attacks**
+**Achievement: Shellcode Primer**  
+**Hint: Printer Firmware**  
+**Hint: Hash Extension Attacks**  
 **Hint: Dropping Files**
