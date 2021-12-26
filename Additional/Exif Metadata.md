@@ -13,6 +13,7 @@ for f in *; do echo $f; exiftool -LastModifiedBy $f; done
 It turns out that all files were last modified by "Santa Claus" except file **2021-12-21.docx**, which was last modified by Jack Frost.
 
 **Achievement: Document Analysis**
+
 The Elf provides hints for [objective 2](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-2):
 **Hint: Coordinate Systems**
 
