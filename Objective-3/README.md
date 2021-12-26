@@ -1,6 +1,7 @@
 <h1 id="objective-3-thaw-frost-towers-entrance">Objective 3: Thaw Frost Tower’s Entrance</h1>
 <p><strong>Location: Castle Approach</strong><br>
-<strong>Elf: Grimy McTrollkins</strong></p>
+<strong>Elf: Grimy McTrollkins</strong><br>
+<strong>Hints provided by Gready GopherGuts after completion of <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Grepping%20for%20Gold.md">Grepping for Gold</a></strong></p>
 <p>This objective is to thaw the frozen entrance to the Frost Tower.<br>
 To accomplish this, the Wifi Dongle received from Jingle Ringford has to be used.</p>
 <p>It is possible to the Wifi of the Frost Tower and to consume the API of the building management system to increase the temperature:</p>
@@ -26,4 +27,5 @@ elf@a8b522b14ea5:~$ curl -XPOST -H 'Content-Type: application/json' --data-binar
   "WARNING": "ICE MELT DETECTED!"
 }
 </code></pre>
+<p><strong>Achievement: Thaw Frost Tower’s Entrance</strong></p>
 
