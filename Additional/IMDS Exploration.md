@@ -1,9 +1,11 @@
-<h1 id="imds-exploration">IMDS Exploration</h1>
-<p><strong>Location: Restroom, Frost Tower, 16<sup>th</sup> Floor</strong><br>
-<strong>Troll: Noxious O. D’or</strong></p>
-<p>This objective is a training about what data could be retrieved from the Instance Metadata Service (IMDS) in cloud environments.<br>
-It is completely guided exercise.</p>
-<pre><code>elfu@c27f40ac7165:~$ ping -c1 169.254.169.254
+# IMDS Exploration
+**Location: Restroom, Frost Tower, 16<sup>th</sup> Floor**
+**Troll: Noxious O. D'or**
+
+This objective is a training about what data could be retrieved from the Instance Metadata Service (IMDS) in cloud environments.
+It is completely guided exercise.
+```
+elfu@c27f40ac7165:~$ ping -c1 169.254.169.254
 PING 169.254.169.254 (169.254.169.254) 56(84) bytes of data.
 64 bytes from 169.254.169.254: icmp_seq=1 ttl=64 time=0.014 ms
 
@@ -89,8 +91,9 @@ elfu@c27f40ac7165:\~$ echo $TOKEN
 Uv38ByGCZU8WP18PmmIdcpVmx00QA3xNe7sEB9Hixkk=
 elfu@c27f40ac7165:\~$ curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/placement/region; echo
 np-north-1e
-</code></pre>
-<p><strong>Achievement: IMDS Exploration</strong></p>
-<p>The Troll provides hints for <a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-10">objective 10</a>:<br>
-<strong>Hint: AWS IMDS Documentation</strong></p>
+```
 
+**Achievement: IMDS Exploration**
+
+The Troll provides hints for [objective 10](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-10):
+**Hint: AWS IMDS Documentation**
