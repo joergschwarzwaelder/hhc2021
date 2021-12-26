@@ -15,5 +15,7 @@ It turns out that all files were last modified by "Santa Claus" except file **20
 **Achievement: Document Analysis**
 The Elf provides hints for [objective 2](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-2):
 **Hint: Coordinate Systems**
+
 **Hint: Flask Cookies**
+
 **Hint: OSINT Talk**
