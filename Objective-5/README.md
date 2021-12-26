@@ -12,4 +12,5 @@ Executing `./mallard.py --file /mnt/USBDEVICE/inject.bin` reveals a (reversed) b
 Executing exactly this command without sending it to the bash shell shows, that the script adds an SSH key to the user's authorized_keys file. In the comment field we have presumably the owner, **ickymcgoop**@trollfun.jackfrosttower.com.
 
 ![SSH key information](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-5/ssh-key.png)
+
 **Achievement: Strange USB Device**
