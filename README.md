@@ -1,6 +1,5 @@
 # SANS Holiday Hack Challenge 2021
-**Write-up submitted by Joerg Schwarzwaelder**
-
+**Write-up submitted by Joerg Schwarzwaelder**  
 **In-game character: joergen**
 
 **Disclaimer:** All information and code in this repository is provided as-is, probably not without errors and not ready for production use.
