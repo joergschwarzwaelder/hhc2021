@@ -94,5 +94,7 @@ The content of the file from step 11 is "Secret to KringleCon success: all of ou
 **Achievement: Shellcode Primer**
 
 **Hint: Printer Firmware**
+
 **Hint: Hash Extension Attacks**
+
 **Hint: Dropping Files**
