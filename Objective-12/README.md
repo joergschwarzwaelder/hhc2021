@@ -1,8 +1,6 @@
 # Objective 12: Frost Tower Website Checkup
-**Location: Studio, Frost Tower, 16<sup>th</sup> Floor, https://staging.jackfrosttower.com/**
-
-**Troll: Ingreta Tude**
-
+**Location: Studio, Frost Tower, 16<sup>th</sup> Floor, https://staging.jackfrosttower.com/**  
+**Troll: Ingreta Tude**  
 **Hints provided by Ribb Bonbowford after completion of [Elf Code Python](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Elf%20Code%20Python.md)**
 
 This objective is to perform a security assessment of the Frost Tower website with the [source code](https://download.holidayhackchallenge.com/2021/frosttower-web.zip) being provided.
