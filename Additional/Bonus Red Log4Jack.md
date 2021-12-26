@@ -54,7 +54,7 @@ public class Joergen {
 }
 </code></pre>
 <p><em>CLIENTIP</em> has to be replaced with the terminal’s IP address.</p>
-<h3 id="alternative-2-pure-java-solution">Alternative 2: pure Java solution</h3>
+<h3 id="alternative-2-pure-java-solution-platform-independant">Alternative 2: pure Java solution, platform independant</h3>
 <pre><code>import java.io.*;
 import java.nio.file.*;
 import java.net.Socket;
