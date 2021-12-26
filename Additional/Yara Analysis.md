@@ -9,7 +9,16 @@ snowball2@1f8d0eab2566:~$ ./the_critical_elf_app
 yara_rule_135 ./the_critical_elf_app
 ```
 Rule 135 defines `candycane` to be a malicious string.
-So the executable was hex dumped and the string changed to `candycone`.
+So the executable was hex dumped and the string changed to `candycone`:
+```
+snowball2@1f8d0eab2566:~$ xxd the_critical_elf_app > the_critical_elf_app.xxd
+```
+```
+00002000: 0100 0200 0000 0000 6361 6e64 7963 6f6e ........candycon
+```
+```
+snowball2@1f8d0eab2566:~$ xxd -r the_critical_elf_app.xxd > the
+```
 
 Running the modified binary results in Yara rule 1056 matching:
 ```
@@ -17,7 +26,10 @@ snowball2@1f8d0eab2566:~$ ./the
 yara_rule_1056 ./the
 ```
 This rule defines `rogram!!` as malicious.
-We replace the first `!` in the binary with a blank.
+We replace the first `!` in the binary with a blank:
+```
+00002050: 6973 2070 726f 6772 616d 2021 0000 0000 is program !....
+```
 
 In the next run Yara rule 1732 matches:
 ```
