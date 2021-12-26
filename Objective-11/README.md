@@ -1,8 +1,6 @@
 # Objective 11: Customer Complaint Analysis
-**Location: FrostFest Talks Lobby, Frost Tower, 2<sup>nd</sup> Floor**
-
-**Troll: Pat Tronizer**
-
+**Location: FrostFest Talks Lobby, Frost Tower, 2<sup>nd</sup> Floor**  
+**Troll: Pat Tronizer**  
 **Hints provided by Tinsel Upatree after completion of [Strace, Ltrace, Retrace](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Strace,%20Ltrace,%20Retrace.md)**
 
 This objective is about getting familiar with Wireshark.
