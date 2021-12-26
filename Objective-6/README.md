@@ -1,6 +1,7 @@
 <h1 id="objective-6-shellcode-primer">Objective 6: Shellcode Primer</h1>
-<p><strong>Location: Jack’s Office (Frost Tower, 16th floor), <a href="https://tracer.kringlecastle.com/">https://tracer.kringlecastle.com/</a></strong><br>
-<strong>Elf: Ruby Cyster</strong></p>
+<p><strong>Location: Jack’s Office, Frost Tower, 16<sup>th</sup> Floor, <a href="https://tracer.kringlecastle.com/">https://tracer.kringlecastle.com/</a></strong><br>
+<strong>Elf: Ruby Cyster</strong><br>
+<strong>Hints provided by Chimney Scissorsticks after completion of <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Holiday%20Hero.md">Holiday Hero</a></strong></p>
 <p>This objective is a small training in x86 assembly language (basics and performing system calls). The background is to be able to create shellcode payloads to be used in system attacks.</p>
 <ol>
 <li>Introduction</li>
@@ -93,4 +94,8 @@ mov rdi,0     ; return code
 syscall
 </code></pre>
 <p>The content of the file from step 11 is “Secret to KringleCon success: all of our speakers and organizers, providing the gift of <strong>cyber security knowledge</strong>, free to the community.”</p>
+<p><strong>Achievement: Shellcode Primer</strong></p>
+<p><strong>Hint: Printer Firmware</strong><br>
+<strong>Hint: Hash Extension Attacks</strong><br>
+<strong>Hint: Dropping Files</strong></p>
 
