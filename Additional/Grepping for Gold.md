@@ -45,7 +45,7 @@ Host: 34.77.207.226 () Ports: 8080/open/tcp//http-proxy/// Ignored State: filter
 12
 </code></pre>
 <p><strong>12</strong></p>
-<p><strong>Achievement: "Grepping for Gold"</strong><br>
+<p><strong>Achievement: Grepping for Gold</strong><br>
 The Troll provides hints for <a href="https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-3">objective 3</a>:<br>
 <strong>Hint: Linux Wi-Fi Commands</strong><br>
 <strong>Hint: Web Browsing with cURL</strong><br>
