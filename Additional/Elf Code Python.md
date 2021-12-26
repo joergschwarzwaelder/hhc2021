@@ -106,12 +106,10 @@ elf.moveUp(2)
 <p><strong>Achievement: Elf Code Python</strong></p>
 <h3 id="bonus-levels">Bonus Levels</h3>
 <h3 id="level-9">Level 9:</h3>
-<!-- prettier-ignore -->
 <pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
 
 def func_to_pass_to_munchkin(list_of_lists):
     return sum(list(map(lambda l : sum([i for i in l if isinstance(i,int)]),list_of_lists)))
- 
 munchkins.get(0).answer(func_to_pass_to_munchkin)
 all_levers = levers.get()
 moves = [elf.moveDown, elf.moveLeft, elf.moveUp, elf.moveRight] * 2
@@ -124,10 +122,8 @@ elf.moveLeft(4)
 elf.moveUp(1)
 </code></pre>
 <h3 id="level-10">Level 10:</h3>
-<!-- prettier-ignore -->
 <pre><code>import elf, munchkins, levers, lollipops, yeeters, pits
 import time
- 
 muns = munchkins.get()
 lols = lollipops.get()[::-1]
 for index, mun in enumerate(muns):
