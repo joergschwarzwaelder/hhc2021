@@ -64,6 +64,6 @@ When navigating as Santa through the Santa image in the Entry hall the character
 Some [Holiday Eggs](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md) were discovered.
 
 ## Group Picture
-Luckily Marie stopped by for the Team's Group picture:
+Luckily Marie stopped by for the Team's Group picture:  
 ![Team's Group Picture](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Group%20Picture.png)
 
