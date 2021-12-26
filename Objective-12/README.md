@@ -1,5 +1,6 @@
 # Objective 12: Frost Tower Website Checkup
-**Location: Stud^i^o, Frost Tower, 16<sup>th</sup> Floor, https://staging.jackfrosttower.com/**
+**Location: Studio, Frost Tower, 16<sup>th</sup> Floor, https://staging.jackfrosttower.com/**
+
 **Troll: Ingreta Tude**
 **Hints provided by Ribb Bonbowford after completion of [Elf Code Python](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Elf%20Code%20Python.md)**
 
