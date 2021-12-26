@@ -27,6 +27,8 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials/jf-deploy-role
 
 ```
 jsw@io:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
+```
+```json
 {
 	"Code": "Success",
 	"LastUpdated": "2021-05-02T18:50:40Z",
