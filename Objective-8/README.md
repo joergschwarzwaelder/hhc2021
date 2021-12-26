@@ -18,7 +18,7 @@ After this a Python shell is displayed.
 In order to escape this `os.system.("bash")` has to be submitted in order to get to a normal Unix shell.
 
 ### Reconnaissance
-An nmap scan of the network 10.128.0.0/22 two hosts providing Windows services: 10.128.1.53 (domain controller) and 10.128.3.30 (samba file server) with the shares `elfu_svc_shr` and `research_dep`.
+An nmap scan of the network 10.128.0.0/22 reveals two hosts providing Windows services: 10.128.1.53 (domain controller) and 10.128.3.30 (samba file server) with the shares `elfu_svc_shr` and `research_dep`.
 
 
 ### Pulling data from AD
@@ -52,7 +52,7 @@ hashcat -m 13100 -a0 spn.txt --potfile-disable -r OneRuleToRuleThemAll.rule --fo
 Hashcat finds the password for `elfu_svc` to be `Snow2021!`.
 
 ### Access to elfu_svc_shr
-With this information we can get access to the elfu_svc_shr file share in 10.128.3.30:
+With this information we can get access to the elfu_svc_shr file share on 10.128.3.30:
 ```
 smbclient -U elfu_svc '\\10.128.3.30\elfu_svc_shr'
 ```
