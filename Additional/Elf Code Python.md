@@ -125,7 +125,7 @@ elf<span class="token punctuation">.</span>moveUp<span class="token punctuation"
 <h3 id="level-10">Level 10:</h3>
 <pre class=" language-python"><code class="prism  language-python"><span class="token keyword">import</span> elf<span class="token punctuation">,</span> munchkins<span class="token punctuation">,</span> levers<span class="token punctuation">,</span> lollipops<span class="token punctuation">,</span> yeeters<span class="token punctuation">,</span> pits
 <span class="token keyword">import</span> time
- 
+
 muns <span class="token operator">=</span> munchkins<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span>
 lols <span class="token operator">=</span> lollipops<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
 <span class="token keyword">for</span> index<span class="token punctuation">,</span> mun <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>muns<span class="token punctuation">)</span><span class="token punctuation">:</span>
