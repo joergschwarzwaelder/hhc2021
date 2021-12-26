@@ -1,5 +1,6 @@
 # Objective 4: Slot Machine Investigation
 **Location: https://slots.jackfrosttower.com/**
+
 **Hints provided by Noel Boethie after completion of [Logic Munchers](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Logic%20Munchers.md)**
 
 The objective is to analyze Jack Frosts slot machines and to try to get more than 1000 coins. When reaching this, the server will respond with the solution in the data.response field.
