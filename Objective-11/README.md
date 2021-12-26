@@ -14,6 +14,6 @@ The objective is to find the traffic originated by humans and then to find, whic
 <pre><code>urlencoded-form.value contains "room 1024"
 </code></pre>
 <p>reveals that Yaqh, Flud and Hagg are complaining about the lady in this room.<br>
-Sorting the names results in the solution <strong>Flud Hagg Yaqh</strong><br>
-<strong>Achievement: "Reading Evil Packets"</strong></p>
+Sorting the names results in the solution <strong>Flud Hagg Yaqh</strong></p>
+<p><strong>Achievement: Reading Evil Packets</strong></p>
 
