@@ -8,7 +8,7 @@
 The below Verilog FPGA code creates the requested square wave at the required frequencies.
 The rounding mentioned in the hints does not seem to be an issue.
 
-```
+```verilog
 `timescale 1ns/1ns
 module tone_generator (
     input clk,
@@ -21,7 +21,7 @@ module tone_generator (
     reg [31:0] tenth=freq/10;
     reg [31:0] clkdivider=625000000/tenth;
     reg [32:0] counter;
-	  reg t;
+    reg t;
     assign wave_out = t;
 	
 	always @(posedge clk or posedge rst)
