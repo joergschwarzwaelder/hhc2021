@@ -1,7 +1,7 @@
 # Holiday Eggs
 
 ### Calling Birds
-https://americanornithology.org/four-calling-birds/ establishes a links to the name of this year's HolidayHack Challenge (Calling Birds) and also to the past two: Turtle Doves and French Hens.  So I assume next year we will se KringleCon V: Golden Rings :)
+https://americanornithology.org/four-calling-birds/ establishes a link to the name of this year's HolidayHack Challenge (Calling Birds) and also to the past two: Turtle Doves and French Hens.  So I assume next year we will se KringleCon V: Golden Rings :)
 
 ### Frost Tower Wifi
 The MAC address of the Wifi dongle is 02:4A:46:68:69:21 which is "~STX~JFhi!"
