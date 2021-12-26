@@ -16,9 +16,9 @@ http.request.method==POST && !(ip.flags.rb == 1)
 was used (filtering for forms submitted via POST by humans). It was found that the human is in room 1024:
 ![Human](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-11/room1024.png)
 
-Filtering for this room
+Filtering for this room in the POST requests initiated by Trolls
 ```
-urlencoded-form.value contains "room 1024"
+http.request.method==POST && ip.flags.rb == 1 && urlencoded-form.value contains "room 1024"
 ```
 reveals that Yaqh, Flud and Hagg are complaining about the lady in this room:
 ![Trolls](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-11/trolls.png)
