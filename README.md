@@ -61,8 +61,8 @@ When navigating as Santa through the Santa image in the Entry hall the character
 - [IMDS Exploration](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md)
 
 ## Holiday Eggs
-One [Holiday Egg](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md) was discovered.
+Some [Holiday Eggs](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md) were discovered.
 
 ## Group Picture
-![-----Team's Group Picture](https://github.com/joergschwarzwaelder/hhc2020/blob/master/Group%20Picture.png-----)
+![Team's Group Picture](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Group%20Picture.png)
 
