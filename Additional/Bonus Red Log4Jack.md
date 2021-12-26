@@ -35,7 +35,7 @@ Sincerely,
 Santa
 </code></pre>
 <p>So <strong>patching</strong> is the solution.</p>
-<h3 id="alternative-1">Alternative 1</h3>
+<h3 id="alternative-1-just-reading-the-targeted-file">Alternative 1: just reading the targeted file</h3>
 <pre><code>import java.io.*;
 import java.nio.file.*;
 
