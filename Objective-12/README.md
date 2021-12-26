@@ -17,7 +17,7 @@ It was found that a valid session is also set, if you complete the <a href="http
             res.redirect("/contact");
 </code></pre>
 <h3 id="sqli-flaw">SQLi flaw</h3>
-<p>Using this unprivileged user session an SQLi flaw in the function to get user details could be used to retrieve more information from the database.<br>
+<p>Using this unprivileged user session, an SQLi flaw in the function to get user details could be used to retrieve more information from the database.<br>
 As only caveat it has to be ensured, that the <strong>comma character has to be avoided</strong> in the SQL statement as the application splits up the query at the commas.<br>
 Furthermore it is important to note that “union” requires that the <strong>number of columns on both sides match</strong>.</p>
 <p>This URL is the base for all following SQLi attacks:</p>
