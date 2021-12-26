@@ -7,7 +7,7 @@ This game is about getting familiar with Fail2Ban.
 The following files were prepared to filter the malicious requests from the log file and to trigger the addition to the naughty list.
 
 /etc/fail2ban/action.d/hohono.conf:
-```js:/etc/fail2ban/action.d/hohono.conf
+```
 [Definition]
 actionban = /root/naughtylist add <ip>
 actionunban = /root/naughtylist del <ip>
