@@ -19,7 +19,7 @@ yara_rule_1056 ./the
 This rule defines `rogram!!` as malicious.
 We replace the first `!` in the binary with a blank.
 
-In next run Yara rule 1732 matches:
+In the next run Yara rule 1732 matches:
 ```
 snowball2@1f8d0eab2566:~$ ./the
 yara_rule_1732 ./the
