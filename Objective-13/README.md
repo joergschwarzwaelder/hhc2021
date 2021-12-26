@@ -21,7 +21,7 @@ module tone_generator (
     reg [31:0] tenth=freq/10;
     reg [31:0] clkdivider=625000000/tenth;
     reg [32:0] counter;
-	reg t;
+	  reg t;
     assign wave_out = t;
 	
 	always @(posedge clk or posedge rst)
@@ -44,6 +44,7 @@ endmodule
 ```
 
 **Item: FPGA**
+
 **Achievement: FPGA Programming**
 
 After the FPGA is inserted into the device, the spaceship lands and opens the door.
