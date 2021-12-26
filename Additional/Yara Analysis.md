@@ -1,5 +1,5 @@
 # Yara Analysis
-**Location: Entry, Santa's Castle, Ground Floor**
+**Location: Entry, Santa's Castle, Ground Floor**  
 **Elf: Fitzy Shortstack**
 
 This challenge is based on a Cranberry Pi terminal and is about modifying a binary to escape an existing YARA ruleset.
@@ -40,8 +40,8 @@ Candy Sweetness Gauge: Exceedingly Sugarlicious
 Elf Jolliness Quotient: 4a6f6c6c7920456e6f7567682c204f76657274696d6520417070726f766564
 ```
 
-**Achievement: Yara Analysis**
-The Elf provides hints for [objective 9](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-9):
-**Hint: GitHub monitoring in Splunk**
-**Hint: Sysmon Monitoring in Splunk**
+**Achievement: Yara Analysis**  
+The Elf provides hints for [objective 9](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-9):  
+**Hint: GitHub monitoring in Splunk**  
+**Hint: Sysmon Monitoring in Splunk**  
 **Hint: Malicious NetCat??**
