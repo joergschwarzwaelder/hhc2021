@@ -2,7 +2,7 @@
 **Location: https://apply.jackfrosttower.com/**  
 **Hints provided by Noxious O. D'or after completion of [IMDS Exploration](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md)**
 
-This objective is about SSRF.
+This objective is about SSRF to IMDS URLs.
 
 The website's application form consumes the user's name, resume (as file upload) and the URL to the public NLBI report.
 
