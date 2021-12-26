@@ -7,7 +7,7 @@ This is absolutely doable manually, but if you are lazy you are able to cheat.
 Open the browser's developer tools and switch to the console.
 Then select `game` in the context picker:  
 ![Context Picker](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Context-Picker.png)  
-Then execute this script which enable you to automatically solve each level in Elves' speed:
+Then execute this script, which enables you to automatically solve each level in Elves' speed:
 ```javascript
 function Sleep(mils){
   return new Promise(resolve => setTimeout(resolve,mils));
