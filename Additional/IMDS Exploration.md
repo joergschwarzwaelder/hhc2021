@@ -3,7 +3,7 @@
 **Troll: Noxious O. D'or**
 
 This objective is a training about what data could be retrieved from the Instance Metadata Service (IMDS) in cloud environments.
-It is completely guided exercise.
+It is a completely guided exercise.
 ```bash
 elfu@c27f40ac7165:~$ ping -c1 169.254.169.254
 ```
