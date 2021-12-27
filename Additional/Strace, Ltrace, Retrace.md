@@ -5,6 +5,7 @@
 This objective is about getting familiar with the tools to perform a runtime analysis of executables.
 ```
 kotton_kandy_co@e9d0d43a904b:~$ strace -o out ./make_the_candy
+Unable to open configuration file.
 ```
 In the log file `out` we can find this syscall running into an error:
 ```
@@ -17,6 +18,7 @@ kotton_kandy_co@e9d0d43a904b:~$ cat registration.json
         "registration" : "done"
 }
 kotton_kandy_co@e9d0d43a904b:~$ ltrace -o out ./make_the_candy
+Unregistered - Exiting.
 ```
 In the log file we can find this failing library call:
 ```
@@ -29,6 +31,7 @@ kotton_kandy_co@e9d0d43a904b:~$ cat registration.json
         "Registration" : "done"
 }
 kotton_kandy_co@e9d0d43a904b:~$ ltrace -o out ./make_the_candy
+Unregistered - Exiting.
 ```
 In the log file we can find this failing library call:
 ```
@@ -40,6 +43,12 @@ kotton_kandy_co@e9d0d43a904b:~$ cat registration.json
 {
         "Registration" : "True"
 }
+```
+
+```
+kotton_kandy_co@10c8d6e0f1e8:~$ ./make_the_candy | more
+
+Launching...
 ```
 
 **Achievement: Strace Ltrace Retrace**  
