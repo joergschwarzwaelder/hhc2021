@@ -7,6 +7,7 @@ Multiple terminal session are created automatically, one running a web server se
 
 The objective is to retrieve the file `/home/solr/kringle.txt` from a web service running solr on http://solrpower.kringlecastle.com:8983/.
 
+The attack approach is taken from the provided [bonus help](https://gist.github.com/joswr1ght/fb361f1f1e58307048aae5c0f38701e4).  
 First a Java class `Joergen` creating a reverse shell is created:
 ```java
 public class Joergen {
