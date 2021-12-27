@@ -28,7 +28,7 @@
   - [Objective 5: Strange USB Device](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-5)
   - [Objective 6: Shellcode Primer](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-6)
   - [Objective 7: Printer Exploitation](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-7)
-  - [Objective 8: Kerberoasting on an Open Fire](https://github.com/joergschwarzwaelder/hhc2021/tree/master/objective-8)
+  - [Objective 8: Kerberoasting on an Open Fire](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-8)
   - [Objective 9: Splunk!](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-9)
   - [Objective 10: Now Hiring!](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-10)
   - [Objective 11: Customer Complaint Analysis](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-11)
