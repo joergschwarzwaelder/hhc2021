@@ -1,8 +1,6 @@
 # Objective 5: Strange USB Device
-**Location: UNPreparedness Room, Santa's Castle, 2<sup>nd</sup> Floor**
-
-**Elf: Morcel Nougat**
-
+**Location: UNPreparedness Room, Santa's Castle, 2<sup>nd</sup> Floor**  
+**Elf: Morcel Nougat**  
 **Hints provided by Jewel Loggins after completion of [IPv6 Sandbox](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IPv6%20Sandbox.md)**
 
 
