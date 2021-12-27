@@ -34,5 +34,5 @@ This year Jason is the flush handle in Jack's Restroom.
 
 ### The Third Kind
 
-This establishes a link to the film [Close Encounters of the Third Kind](https://en.wikipedia.org/wiki/Close_Encounters_of_the_Third_Kind)
+This establishes a link to the film [Close Encounters of the Third Kind](https://en.wikipedia.org/wiki/Close_Encounters_of_the_Third_Kind).
 
