@@ -17,3 +17,7 @@ The Elf Jolliness Quotient is `4a6f6c6c7920456e6f7567682c204f76657274696d6520417
 
 ### Where is the World is Caramel Santaigo
 This is similar to the game "[Where in the World Is Carmen Sandiego?](https://en.wikipedia.org/wiki/Where_in_the_World_Is_Carmen_Sandiego?_%281985_video_game%29)" from 1985.
+
+### Shenanigans Area
+There is a hidden, Terry Pratchett's Discworld themed, Shenanigans area, which can only be reached by faking a teleportation to `shenanigans`:
+![Shenanigans Area](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Shenanigans.png)
