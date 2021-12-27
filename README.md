@@ -39,7 +39,7 @@
 
 ### North Pole
 - [Grepping for Gold](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Grepping%20for%20Gold.md)
-- [Logic Munchers](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Login%20Munchers.md)
+- [Logic Munchers](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Logic%20Munchers.md)
 -  [Bonus Blue Log4Jack](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Bonus%20Blue%20Log4Jack.md)
 - [Bonus Red Log4Jack](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Bonus%20Red%20Log4Jack.md)
 
