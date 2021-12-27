@@ -18,10 +18,6 @@
 
 [List of Game Items](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Items.md)
 
-To the left of the workshop, protected by the HID lock, is a dark room with a labyrinth. If you navigate through this room to the bottom, the game character transforms to Santa and moves to the Entry hall. Some objectives are only accessible being Santa.
-
-When navigating as Santa through the Santa image in the Entry hall the character is transformed back to original.
-
 
 ## Main Objectives
 
@@ -61,8 +57,9 @@ When navigating as Santa through the Santa image in the Entry hall the character
 - [IMDS Exploration](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md)
 
 ## Holiday Eggs
-One [Holiday Egg](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md) was discovered.
+Some [Holiday Eggs](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md) were discovered.
 
 ## Group Picture
-![-----Team's Group Picture](https://github.com/joergschwarzwaelder/hhc2020/blob/master/Group%20Picture.png-----)
+Luckily Marie stopped by for the Team's Group picture:  
+![Team's Group Picture](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Group%20Picture.png)
 
