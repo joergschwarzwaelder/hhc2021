@@ -36,7 +36,7 @@ module tone_generator (
         counter <= clkdivider-1;
       end
       else counter <=counter-1; 
-       end
+    end
   end
 endmodule
 ```
