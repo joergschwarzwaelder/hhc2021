@@ -60,6 +60,6 @@
 Some [Holiday Eggs](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Holiday%20Eggs.md) were discovered.
 
 ## Group Picture
-Luckily Marie stopped by for the Team's Group picture:  
+Luckily Marie came to the party at the Shenanigans:  
 ![Team's Group Picture](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Group%20Picture.png)
 
