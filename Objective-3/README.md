@@ -1,9 +1,7 @@
 
 # Objective 3: Thaw Frost Tower's Entrance
-**Location: Castle Approach**
-
-**Elf: Grimy McTrollkins**
-
+**Location: Castle Approach**  
+**Elf: Grimy McTrollkins**  
 **Hints provided by Gready GopherGuts after completion of [Grepping for Gold](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Grepping%20for%20Gold.md)**
 
 This objective is to thaw the frozen entrance to the Frost Tower.
