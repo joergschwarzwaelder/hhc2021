@@ -22,22 +22,22 @@ module tone_generator (
     reg t;
     assign wave_out = t;
 	
-	always @(posedge clk or posedge rst)
-	begin
-	  if(rst==1)
-	  begin
+  always @(posedge clk or posedge rst)
+  begin
+    if(rst==1)
+    begin
       t<=0;
       counter<=0;
-	  end
-	  else
-	  begin
-	    if(counter==0) begin
-	      t <= ~t;
-	      counter <= clkdivider-1;
-	    end
-	    else counter <=counter-1; 
+    end
+    else
+    begin
+      if(counter==0) begin
+        t <= ~t;
+        counter <= clkdivider-1;
       end
-	end
+      else counter <=counter-1; 
+       end
+  end
 endmodule
 ```
 
