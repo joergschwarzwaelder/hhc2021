@@ -28,3 +28,11 @@ The background image is loaded from here: https://2021.kringlecon.com/images/tur
 There are in total 51 areas in the game.
 ![51 Areas](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Areas.png)
 
+### Jason
+
+This year Jason is the flush handle in Jack's Restroom.
+
+### The Third Kind
+
+This establishes a link to the film [Close Encounters of the Third Kind](https://en.wikipedia.org/wiki/Close_Encounters_of_the_Third_Kind)
+
