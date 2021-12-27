@@ -76,7 +76,7 @@ syscall
 mov rdi,rax   ; file descriptor returned from sys_open (in rax)
 mov rax,0     ; sys_read
 mov rsi,rsp   ; pointer to buffer on stack
-mov rdx,1000; 1000 bytes to read
+mov rdx,1000  ; 1000 bytes to read
 syscall
 mov rdx,rax   ; number of bytes read returned by sys_read (in rax)
 mov rax,1     ; sys_write
