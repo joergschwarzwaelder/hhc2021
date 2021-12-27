@@ -21,3 +21,10 @@ This is similar to the game "[Where in the World Is Carmen Sandiego?](https://en
 ### Shenanigans Area
 There is a hidden, Terry Pratchett's Discworld themed, Shenanigans area, which can only be reached by faking a teleportation to `shenanigans`:
 ![Shenanigans Area](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Shenanigans.png)
+The background image is loaded from here: https://2021.kringlecon.com/images/turtles.jpg
+
+### Area 51
+
+There are in total 51 areas in the game.
+![51 Areas](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Areas.png)
+
