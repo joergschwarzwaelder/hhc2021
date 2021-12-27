@@ -46,7 +46,7 @@ kotton_kandy_co@e9d0d43a904b:~$ cat registration.json
 ```
 
 ```
-kotton_kandy_co@10c8d6e0f1e8:~$ ./make_the_candy | more
+kotton_kandy_co@10c8d6e0f1e8:~$ ./make_the_candy
 
 Launching...
 ```
