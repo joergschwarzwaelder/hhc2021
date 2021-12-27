@@ -10,6 +10,11 @@
 
 **Background information:**
 
+Long time ago an expedition from Planet Frost established a base in the Land of Oz, where the expedition split up into two warring fractions, Munchkins and Elves.
+In order to establish peace, the Elves were relocated to the North Pole.
+Now Jack Frost, a scion of Planet Frost's ruling family, built a tower next to Santa's castle and aims to make money with slot machines. In addition he established FrostFest, a conference similar to KringleCon in Santa's castle.
+The Frostonians reached out to Santa and asked for help in foiling Jack's plans and returning Jack to Planet Frost to bring him to justice.
+
 [Online Game](https://2021.kringlecon.com/)
 
 [Map of the Game](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Map.md)
