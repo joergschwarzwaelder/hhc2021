@@ -25,7 +25,7 @@ The background image is loaded from here: https://2021.kringlecon.com/images/tur
 
 ### Area 51
 
-There are in total 51 areas in the game.
+There are in total 51 areas in the game.  
 ![51 Areas](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Areas.png)
 
 ### Jason
