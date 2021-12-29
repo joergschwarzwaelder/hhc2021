@@ -125,7 +125,7 @@ elfu@c27f40ac7165:\~$ curl http://169.254.169.254/latest/meta-data/iam/security-
         "Type": "AWS-HMAC",
         "AccessKeyId": "AKIA5HMBSK1SYXYTOXX6",
         "SecretAccessKey": "CGgQcSdERePvGgr058r3PObPq3+0CfraKcsLREpX",
-        "Token": "NR9Sz/7fzxwIgv7URgHRAckJK0JKbXoNBcy032XeVPqP8        /tWiR/KVSdK8FTPfZWbxQ==",
+        "Token": "NR9Sz/7fzxwIgv7URgHRAckJK0JKbXoNBcy032XeVPqP8/tWiR/KVSdK8FTPfZWbxQ==",
         "Expiration": "2026-12-02T18:50:40Z"
 }
 ```
