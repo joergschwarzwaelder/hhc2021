@@ -173,7 +173,7 @@ init@c22e7dc1a1f1:~$ vi questions_answers.json
  ```
  Next the tmux session has to be renamed:  
  CTRL-B
- `:rename-session -t ElfU e`
+ `:rename-session -t ElfU e`  
  Finally, a new session is started:  
  ```
 init@c22e7dc1a1f1:~$ tmuxp load mysession.yaml
