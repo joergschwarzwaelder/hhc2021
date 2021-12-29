@@ -181,7 +181,7 @@ init@c22e7dc1a1f1:~$ tmuxp load mysession.yaml
 Already inside TMUX, switch to session? yes/no
 Or (a)ppend windows in the current active session?
 [y/n/a]: y
- elfu@c22e7dc1a1f1:~$ sudo bash
+elfu@c22e7dc1a1f1:~$ sudo bash
 root@c22e7dc1a1f1:/home/elfu# id
 uid=0(root) gid=0(root) groups=0(root)
 root@c22e7dc1a1f1:/home/elfu# cat /etc/shadow
