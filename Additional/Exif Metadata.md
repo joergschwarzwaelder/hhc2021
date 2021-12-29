@@ -10,7 +10,7 @@ The installed exiftool should be used to find which file is the one in question.
 for f in *; do echo $f; exiftool -LastModifiedBy $f; done
 ```
 It turns out that all files were last modified by "Santa Claus" except file **2021-12-21.docx**, which was last modified by Jack Frost.
-Jack added "Noxious O. D'or" to the Nice list:
+Luckily Santa enabled "track changes" on the document, so that we know, that Jack added "Noxious O. D'or" to the Nice list:
 ![enter image description here](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Jack-Frost-Change.png)
 
 **Achievement: Document Analysis**  
