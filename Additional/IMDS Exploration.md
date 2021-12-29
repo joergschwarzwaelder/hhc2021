@@ -171,10 +171,10 @@ init@c22e7dc1a1f1:~$ vi questions_answers.json
     "echo 'elfu ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers"
 ],
  ```
- Next the tmux session has to be renamed:
+ Next the tmux session has to be renamed:  
  CTRL-B
  `:rename-session -t ElfU e`
- Finally, a new session is started:
+ Finally, a new session is started:  
  ```
 init@c22e7dc1a1f1:~$ tmuxp load mysession.yaml
 [Loading] /home/init/mysession.yaml
