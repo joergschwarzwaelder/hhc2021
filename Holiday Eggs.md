@@ -36,3 +36,6 @@ This year Jason is the flush handle in Jack's Restroom.
 
 This establishes a link to the film [Close Encounters of the Third Kind](https://en.wikipedia.org/wiki/Close_Encounters_of_the_Third_Kind).
 
+### FrostTower 13<sup>th</sup> Floor
+The 13<sup>th</sup> floor is missing in the FrostTower. This could be due to [various reasons](https://en.wikipedia.org/wiki/Thirteenth_floor).
+
