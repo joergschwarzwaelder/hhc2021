@@ -115,6 +115,17 @@ smb: \> dir
 The [PDF document](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/SantaSecretToAWonderfulHolidaySeason.pdf) lists **Kindness** as first secret ingredient for a wonderful holiday season.
 
 ---
+### Bonus: Password of user remote_elf
+The encrypted password in the Powershell script can be decrypted:
+```
+PS C:\Users\joergen> $SecStringPassword = "76492d1116743f0423413b16050a5345MgB8AGcAcQBmAEIAMgBiAHUAMwA5AGIAbQBuAGwAdQAwAEIATgAwAEoAWQBuAGcAPQA9AHwANgA5ADgAMQA1ADIANABmAGIAMAA1AGQAOQA0AGMANQBlADYAZAA2ADEAMgA3AGIANwAxAGUAZgA2AGYAOQBiAGYAMwBjADEAYwA5AGQANABlAGMAZAA1ADUAZAAxADUANwAxADMAYwA0ADUAMwAwAGQANQA5ADEAYQBlADYAZAAzADUAMAA3AGIAYwA2AGEANQAxADAAZAA2ADcANwBlAGUAZQBlADcAMABjAGUANQAxADEANgA5ADQANwA2AGEA"
+PS C:\Users\joergen> $aPass = $SecStringPassword | ConvertTo-SecureString -Key 2,3,1,6,2,8,9,9,4,3,4,5,6,8,7,7
+PS C:\Users\joergen> $temp = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($aPass)
+PS C:\Users\joergen> $PlainPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($temp)
+PS C:\Users\joergen> Write-Output "$PlainPassword"
+A1d655f7f5d98b10!
+```
+
 ### Bonus: Automation - Kerberoboting
 This whole process was automated in an `expect` [script](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/kerberoboting) named `kerberoboting`, so that you can enjoy a brew whilst your computer does the work.
 It just requires you to register at https://register.elfu.org, have `hashcat` installed in the PATH and a working CeWL in the local directory:
