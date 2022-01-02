@@ -13,7 +13,7 @@ It is possible to escape this application by sending an EOF (CTRL-D).
 
 ### Escaping Python Shell
 After this a Python shell is displayed.
-In order to escape this `os.system.("bash")` has to be submitted in order to get to a normal Unix shell.
+In order to escape this `os.system("bash")` has to be submitted in order to get to a normal Unix shell.
 
 ### Reconnaissance
 An nmap scan of the network 10.128.0.0/22 reveals two hosts providing Windows services: 10.128.1.53 (domain controller) and 10.128.3.30 (samba file server) with the shares `elfu_svc_shr` and `research_dep`.
