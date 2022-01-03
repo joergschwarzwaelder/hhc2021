@@ -117,7 +117,7 @@ The [PDF document](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Ob
 ---
 ### Bonus: Password of user remote_elf
 The encrypted password in the Powershell script can be decrypted:
-```
+```powershell
 PS C:\Users\joergen> $SecStringPassword = "76492d1116743f0423413b16050a5345MgB8AGcAcQBmAEIAMgBiAHUAMwA5AGIAbQBuAGwAdQAwAEIATgAwAEoAWQBuAGcAPQA9AHwANgA5ADgAMQA1ADIANABmAGIAMAA1AGQAOQA0AGMANQBlADYAZAA2ADEAMgA3AGIANwAxAGUAZgA2AGYAOQBiAGYAMwBjADEAYwA5AGQANABlAGMAZAA1ADUAZAAxADUANwAxADMAYwA0ADUAMwAwAGQANQA5ADEAYQBlADYAZAAzADUAMAA3AGIAYwA2AGEANQAxADAAZAA2ADcANwBlAGUAZQBlADcAMABjAGUANQAxADEANgA5ADQANwA2AGEA"
 PS C:\Users\joergen> $aPass = $SecStringPassword | ConvertTo-SecureString -Key 2,3,1,6,2,8,9,9,4,3,4,5,6,8,7,7
 PS C:\Users\joergen> $temp = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($aPass)
