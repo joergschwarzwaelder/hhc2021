@@ -126,6 +126,8 @@ PS C:\Users\joergen> Write-Output "$PlainPassword"
 A1d655f7f5d98b10!
 ```
 
+So the password of `remote_elf` is **A1d655f7f5d98b10!**.
+
 ### Bonus: Automation - Kerberoboting
 This whole process was automated in an `expect` [script](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-8/kerberoboting) named `kerberoboting`, so that you can enjoy a brew whilst your computer does the work.
 It just requires you to register at https://register.elfu.org, have `hashcat` installed in the PATH and a working CeWL in the local directory:
