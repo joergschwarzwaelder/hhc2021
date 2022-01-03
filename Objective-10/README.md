@@ -42,3 +42,8 @@ joergen@northpole:~$ curl https://apply.jackfrosttower.com/images/joergen.jpg
 So the secret access key for the S3 bucket is **CGgQcSdERePvGgr058r3PObPq3+0CfraKcsLREpX**
 
 **Achievement: SSRF to IMDS to S3 Bucket Access**
+
+### Additional Information
+
+This objective uses the same IMDS dataset as the [IMDS Exploration terminal](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/IMDS%20Exploration.md).
+For the terminal it is confirmed to be fake information hosted from a local process. In addition - due to the fact, that the region `np-north-1` is not a valid AWS region, it does not make sense trying to get access to a related S3 bucket.
