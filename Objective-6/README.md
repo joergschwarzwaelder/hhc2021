@@ -89,7 +89,7 @@ syscall
 ```
 The content of the file from step 11 is "Secret to KringleCon success: all of our speakers and organizers, providing the gift of **cyber security knowledge**, free to the community."
 
-### Bonus 11a: Protecting the stack
+### Bonus: Protecting the stack
 In order to prevent `sys_read` from overwriting a return address (so that it is not necessary to terminate the process using sys_exit), it is possible to reserve the required buffer space on the stack:
 ```asm
 call go
