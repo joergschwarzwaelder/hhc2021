@@ -29,7 +29,7 @@ This leads to a new hash, but this is still valid.
 
 ### Build new firmware package
 It is now possible to choose between two different payloads ([copy file to incoming folder](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/payload-copy), [reverse shell](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/payload-reverse-shell)) and then to create a ZIP file containing the payload with filename "firmware.bin".
-Next the hash_extender tool is used to append the new ZIP file to the old one whilst creating a new valid hash (hash_extender -d {firmware in as hex string} --data-format=hex -s {signature as hex string} -l {secret length, here: 16} -a {payload as hex string} --append-format=hex).
+Next the `hash_extender` tool is used to append the new ZIP file to the old one whilst creating a new valid hash (hash_extender -d {firmware in as hex string} --data-format=hex -s {signature as hex string} -l {secret length, here: 16} -a {payload as hex string} --append-format=hex).
 Upon extraction, the first, original, ZIP file is ignored and only the appended ZIP containing the custom payload will be extracted and executed.
 All of this is then packed into a JSON file (the new firmware data is provided by the tool as a hex string, it has to be converted into a base64 encoded binary), which will be accepted by the firmware update process.
 
