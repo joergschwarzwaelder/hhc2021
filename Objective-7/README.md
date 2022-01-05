@@ -24,7 +24,7 @@ The firmware package is a JSON file consisting out of these data fields:
 ### Hash Length Extension Attack
 The [Hash Length Extension Attack](https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks) is based on the fact, that if you have "data" and the hash of {secret||data}, you are able to create a new valid hash for {secret||data||payload}, even without knowing the secret.
 This is possible by replicating the state of the hashing algorithm, which is buried in the hash value.
-If the state of the hash algorithm is recovered, it can be used to continue it's calculation over the pay load data.
+If the state of the hash algorithm is recovered, it can be used to continue it's calculation over the payload data.
 This leads to a new hash, but this is still valid.
 
 ### Build new firmware package
