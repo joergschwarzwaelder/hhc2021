@@ -6,7 +6,8 @@ This objective is to get familiar with SSRF using IMDS URLs.
 
 The website's application form consumes the user's name, resume (as file upload) and the URL to the public NLBI report.
 
-After the submission, the item specified by the URL is retrieved by the website and then shown on the "submission accepted" screen using the URL https://apply.jackfrosttower.com/images/{username}.jpg
+After the submission, the item specified by the URL is retrieved by the website and then shown on the "submission accepted" screen using the URL https://apply.jackfrosttower.com/images/{username}.jpg  
+As this is delivered with an image MIME type, the browser refuses to render it. But it can be made visible using cURL or Burp Suite.
 
 By choosing the right IMDS URLs, the secret access key for the S3 bucket can be retrieved using CURL:
 
