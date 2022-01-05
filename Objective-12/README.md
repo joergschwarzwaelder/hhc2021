@@ -50,7 +50,7 @@ app.get('/detail/:id', function(req, res, next) {
 ```
 As only caveat it has to be ensured, that the **comma character has to be avoided** in the SQL statement as the application splits up the query at the commas.
 Furthermore it is important to note that "union" requires that the **number of columns on both sides match**.
-Due to the fact, that the ```uniquecontact``` table has 7 columns, it has to be ensured, that also on the right hand side of the `union` 7 columns have to be delivered.
+Due to the fact, that the ```uniquecontact``` table has 7 columns, it has to be ensured, that also on the right hand side of the `union` 7 columns have to be provided.
 
 This URL is the base for all following SQLi attacks:
 ```
