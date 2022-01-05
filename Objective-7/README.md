@@ -59,6 +59,6 @@ So the solution is **Troll_Pay_Chart.xlsx**
 ### Bonus: Automation
 The full process was automated in the [exploit-bot.pl](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/exploit-bot.pl).
 It expects hash_extender to be available in the current directory and just consumes an option "-p" to specify the payload file.
-The script downloads the current firmware package, adds the payload, creates the new hash and upload the new firmware package to the printer.
+The script downloads the current firmware package, adds the payload, creates the new hash and uploads the new firmware package to the printer.
 
 **Achievement: Hash extension of ELF or firmware**
