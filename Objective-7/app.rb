@@ -1,4 +1,4 @@
-i# encoding: ASCII-8BIT
+# encoding: ASCII-8BIT
 
 SECRET_KEY = 'mybigsigningkey!'
 FIRMWARE_FILE = '/var/firmware.zip'
