@@ -62,7 +62,7 @@ It expects hash_extender to be available in the current directory and just consu
 The script downloads the current firmware package, adds the payload, creates the new hash and uploads the new firmware package to the printer.
 
 ### Bonus: Signing Secret
-Using a reverse shell is was possible to get hold of the application code and the secret, which was used to build the hash.
+Using a reverse shell is was possible to get hold of the [application code](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/app.rb) and the secret, which was used to build the hash.
 The "signature" was built using the secret **mybigsigningkey!**:
 `signature=SHA256(secret || firmware-binary)`
 
