@@ -76,7 +76,7 @@ syscall
 mov rdi,rax   ; file descriptor returned from sys_open (in rax)
 mov rax,0     ; sys_read
 mov rsi,rsp   ; pointer to buffer on stack
-mov rdx,1000; 1000 bytes to read
+mov rdx,1000  ; 1000 bytes to read
 syscall
 mov rdx,rax   ; number of bytes read returned by sys_read (in rax)
 mov rax,1     ; sys_write
@@ -88,6 +88,35 @@ mov rdi,0     ; return code
 syscall
 ```
 The content of the file from step 11 is "Secret to KringleCon success: all of our speakers and organizers, providing the gift of **cyber security knowledge**, free to the community."
+
+### Bonus: Protecting the stack
+In order to prevent `sys_read` from overwriting a return address (so that it is not necessary to terminate the process using sys_exit), it is possible to reserve the required buffer space on the stack:
+```asm
+call go
+db '/var/northpolesecrets.txt',0
+go:
+mov rax,2     ; sys_open
+pop rdi       ; pop pointer to filename from stack
+mov rsi,0     ; flags
+mov rdx,0     ; mode
+syscall
+mov rdi,rax   ; file descriptor returned from sys_open (in rax)
+mov rax,0     ; sys_read
+sub rsp,400h  ; reserve 1024 bytes on stack
+mov rsi,rsp   ; pointer to buffer on stack
+mov rdx,1000  ; 1000 bytes to read
+syscall
+mov rdx,rax   ; number of bytes read returned by sys_read (in rax)
+mov rax,1     ; sys_write
+mov rdi,1     ; file descriptor 1 (stdout)
+mov rsi,rsp   ; pointer to buffer on stack
+syscall
+add rsp,400h  ; free up the reserved 1024 bytes on stack
+mov rax,60    ; sys_exit
+mov rdi,0     ; return code
+syscall
+```
+
 
 **Achievement: Shellcode Primer**  
 **Hint: Printer Firmware**  

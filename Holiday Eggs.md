@@ -19,13 +19,13 @@ The Elf Jolliness Quotient is `4a6f6c6c7920456e6f7567682c204f76657274696d6520417
 This is similar to the game "[Where in the World Is Carmen Sandiego?](https://en.wikipedia.org/wiki/Where_in_the_World_Is_Carmen_Sandiego?_%281985_video_game%29)" from 1985.
 
 ### Shenanigans Area
-There is a hidden, Terry Pratchett's Discworld themed, Shenanigans area, which can only be reached by faking a teleportation to `shenanigans`:
+There is a hidden, Terry Pratchett's Discworld themed, Shenanigans area, which can only be reached by faking a teleportation to `shenanigans` (`{type: "TELEPORT_USER", destination: "shenanigans"}`):
 ![Shenanigans Area](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Shenanigans.png)
 The background image is loaded from here: https://2021.kringlecon.com/images/turtles.jpg
 
 ### Area 51
 
-There are in total 51 areas in the game.  
+There are in total [51 areas](https://en.wikipedia.org/wiki/Area_51) in the game.  
 ![51 Areas](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Areas.png)
 
 ### Jason
@@ -35,4 +35,7 @@ This year Jason is the flush handle in Jack's Restroom.
 ### The Third Kind
 
 This establishes a link to the film [Close Encounters of the Third Kind](https://en.wikipedia.org/wiki/Close_Encounters_of_the_Third_Kind).
+
+### FrostTower 13<sup>th</sup> Floor
+The 13<sup>th</sup> floor is missing in the FrostTower. This could be due to [various reasons](https://en.wikipedia.org/wiki/Thirteenth_floor).
 

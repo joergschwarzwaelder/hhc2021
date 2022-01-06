@@ -3,6 +3,8 @@
 **Troll: Crunchy Squishter**  
 **Hints provided by Grody Goiterson after completion of [Frostavator](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Additional/Frostavator.md)**
 
+The objective is to create Verilog FPGA code which is able to create a square wave wich 500 Hz, 1 kHz, 2 kHz and a random frequency. the frequency is defined using a 32 bit input signal.
+
 The below Verilog FPGA code creates the requested square wave at the required frequencies.
 The rounding mentioned in the hints does not seem to be an issue.
 
@@ -18,26 +20,26 @@ module tone_generator (
     // ---- IT IS NECESSARY FOR AUTOMATED ANALYSIS ----
     reg [31:0] tenth=freq/10;
     reg [31:0] clkdivider=625000000/tenth;
-    reg [32:0] counter;
+    reg [31:0] counter;
     reg t;
     assign wave_out = t;
 	
-	always @(posedge clk or posedge rst)
-	begin
-	  if(rst==1)
-	  begin
+  always @(posedge clk or posedge rst)
+  begin
+    if(rst==1)
+    begin
       t<=0;
       counter<=0;
-	  end
-	  else
-	  begin
-	    if(counter==0) begin
-	      t <= ~t;
-	      counter <= clkdivider-1;
-	    end
-	    else counter <=counter-1; 
+    end
+    else
+    begin
+      if(counter==0) begin
+        t <= ~t;
+        counter <= clkdivider-1;
       end
-	end
+      else counter <=counter-1; 
+    end
+  end
 endmodule
 ```
 

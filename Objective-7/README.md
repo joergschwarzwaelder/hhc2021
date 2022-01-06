@@ -24,13 +24,13 @@ The firmware package is a JSON file consisting out of these data fields:
 ### Hash Length Extension Attack
 The [Hash Length Extension Attack](https://blog.skullsecurity.org/2012/everything-you-need-to-know-about-hash-length-extension-attacks) is based on the fact, that if you have "data" and the hash of {secret||data}, you are able to create a new valid hash for {secret||data||payload}, even without knowing the secret.
 This is possible by replicating the state of the hashing algorithm, which is buried in the hash value.
-If the state of the hash algorithm is recovered, it can be used to continue it's calculation over the pay load data.
+If the state of the hash algorithm is recovered, it can be used to continue it's calculation over the payload data.
 This leads to a new hash, but this is still valid.
 
 ### Build new firmware package
 It is now possible to choose between two different payloads ([copy file to incoming folder](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/payload-copy), [reverse shell](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/payload-reverse-shell)) and then to create a ZIP file containing the payload with filename "firmware.bin".
-Next the hash_extender tool is used to append the new ZIP file to the old one whilst creating a new valid hash (hash_extender -d {firmware in as hex string} --data-format=hex -s {signature as hex string} -l {secret length, here: 16} -a {payload as hex string} --append-format=hex).
-Upon extraction, the first, original, ZIP file is ignored and only the appended ZIP containing the custom payload will be extracted and executed.
+Next the `hash_extender` tool is used to append the new ZIP file to the old one whilst creating a new valid hash (`hash_extender -d {firmware in as hex string} --data-format=hex -s {signature as hex string} -l {secret length, here: 16} -a {payload as hex string} --append-format=hex`).
+Upon extraction, the first, original, ZIP file is ignored and only the appended ZIP containing the custom payload will be extracted and executed.  
 All of this is then packed into a JSON file (the new firmware data is provided by the tool as a hex string, it has to be converted into a base64 encoded binary), which will be accepted by the firmware update process.
 
 ### Upload firmware package
@@ -59,6 +59,11 @@ So the solution is **Troll_Pay_Chart.xlsx**
 ### Bonus: Automation
 The full process was automated in the [exploit-bot.pl](https://github.com/joergschwarzwaelder/hhc2021/blob/master/Objective-7/exploit-bot.pl).
 It expects hash_extender to be available in the current directory and just consumes an option "-p" to specify the payload file.
-The script downloads the current firmware package, adds the payload, creates the new hash and upload the new firmware package to the printer.
+The script downloads the current firmware package, adds the payload, creates the new hash and uploads the new firmware package to the printer.
+
+### Bonus: Signing Secret
+Using a reverse shell is was possible to get hold of the application code and the secret, which was used to build the hash.
+The "signature" was built using the secret **mybigsigningkey!**:
+`signature=SHA256(secret || firmware-binary)`
 
 **Achievement: Hash extension of ELF or firmware**

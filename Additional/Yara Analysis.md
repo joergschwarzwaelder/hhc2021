@@ -18,6 +18,7 @@ snowball2@1f8d0eab2566:~$ xxd the_critical_elf_app > the_critical_elf_app.xxd
 ```
 ```
 snowball2@1f8d0eab2566:~$ xxd -r the_critical_elf_app.xxd > the
+snowball2@1f8d0eab2566:~$ chmod a+x t
 ```
 
 Running the modified binary results in Yara rule 1056 matching:
@@ -50,6 +51,11 @@ Toy Levels: Very Merry, Terry
 Naughty/Nice Blockchain Assessment: Untampered
 Candy Sweetness Gauge: Exceedingly Sugarlicious
 Elf Jolliness Quotient: 4a6f6c6c7920456e6f7567682c204f76657274696d6520417070726f766564
+```
+
+As an alternative to the last step, the file size can be extended to be at least 50kB using this command (setting the file size to 51kB):
+```
+snowball2@08cc17df3e9c:~$ truncate -s 51K the
 ```
 
 **Achievement: Yara Analysis**  

