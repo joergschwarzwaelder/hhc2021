@@ -61,4 +61,9 @@ The full process was automated in the [exploit-bot.pl](https://github.com/joergs
 It expects hash_extender to be available in the current directory and just consumes an option "-p" to specify the payload file.
 The script downloads the current firmware package, adds the payload, creates the new hash and uploads the new firmware package to the printer.
 
+### Bonus: Signing Secret
+Using a reverse shell is was possible to get hold of the application code and the secret, which was used to build the hash.
+The "signature" was built using the secret **mybigsigningkey!**:
+`signature=SHA256(secret || firmware-binary)`
+
 **Achievement: Hash extension of ELF or firmware**
