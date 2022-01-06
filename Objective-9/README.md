@@ -15,7 +15,7 @@ Looking through the git commands Eddie ran, determine the remote repository that
 ```
 index=main sourcetype=journald source=Journald:Microsoft-Windows-Sysmon/Operational EventCode=1 User=eddie CommandLine=*git* CommandLine=*partnerapi* | table CommandLine
 ```
-**git@github.com:elfnp3/partnerapi.git**
+**git@&#58;github.com:elfnp3/partnerapi.git**
 
 ### Task 3:
 Eddie was running Docker on his workstation. Gather the full command line that Eddie used to bring up a the partnerapi project on his workstation.
